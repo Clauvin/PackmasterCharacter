@@ -15,7 +15,7 @@ public class Forcefield extends AbstractPackmasterCard {
     public Forcefield() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseBlock = 8;
-        magicNumber = 16;
+        baseMagicNumber = 16;
     }
 
     @Override
