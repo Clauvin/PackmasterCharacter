@@ -1,10 +1,12 @@
 package thePackmaster.powers.royaltypack;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import thePackmaster.patches.DiscardHookPatch;
 import thePackmaster.powers.AbstractPackmasterPower;
 import thePackmaster.util.Wiz;
 
@@ -34,15 +36,14 @@ public class NobleFormPower extends AbstractPackmasterPower implements DiscardHo
     }
 
     @Override
-    public void atStartOfTurnPostDraw() {
-
-    }
-
-    @Override
-    public void onPlayCard(){
+    public void onManualDiscardThing() {
         Wiz.atb(new DrawCardAction(amount * BASE_CARDS_TO_DRAW));
     }
 
-    public void onGol
+    @Override
+    public int onLoseHp(int damageAmount) {
+        Wiz.atb(new GainGoldAction(amount * BASE_GOLD_TO_GAIN));
+        return damageAmount;
+    }
 
 }
