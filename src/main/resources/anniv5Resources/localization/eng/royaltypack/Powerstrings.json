@@ -2,12 +2,11 @@
   "${ModID}:NobleFormPower": {
     "NAME": "Noble Form",
     "DESCRIPTIONS": [
-      "When you discard ",
-      "or play ",
-      "a card, draw a card. ",
-      "When you lose Gold ",
-      "or HP, ",
-      "gain 5 gold."
+      "When you discard a card, draw ",
+      "a card. ",
+      " cards. ",
+      "When you lose Gold, gain ",
+      " gold."
     ]
   }
 }
