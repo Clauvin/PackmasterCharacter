@@ -12,7 +12,7 @@ import static thePackmaster.SpireAnniversary5Mod.makeID;
 
 public class NobleForm extends AbstractPackmasterCard {
 
-    public final static String ID = makeID("MoreSupplies");
+    public final static String ID = makeID("NobleForm");
 
     public NobleForm(){
         super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
