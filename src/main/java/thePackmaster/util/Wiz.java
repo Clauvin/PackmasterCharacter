@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import thePackmaster.SpireAnniversary5Mod;
 import thePackmaster.actions.TimedVFXAction;
@@ -72,7 +73,7 @@ public class Wiz {
 
     public static ArrayList<AbstractMonster> getEnemies() {
         ArrayList<AbstractMonster> monsters = new ArrayList<>(AbstractDungeon.getMonsters().monsters);
-        monsters.removeIf(m -> m.isDead || m.isDying);
+        monsters.removeIf(AbstractCreature::isDeadOrEscaped);
         return monsters;
     }
 
@@ -105,7 +106,6 @@ public class Wiz {
     public static AbstractCard returnTrulyRandomPrediCardInCombat(Predicate<AbstractCard> pred, boolean allCards) {
         return getRandomItem(getCardsMatchingPredicate(pred, allCards));
     }
-
 
     public static AbstractCard returnTrulyRandomPrediCardInCombat(Predicate<AbstractCard> pred) {
         return returnTrulyRandomPrediCardInCombat(pred, false);
@@ -258,6 +258,22 @@ public class Wiz {
         thornDmg(m, amount, AbstractGameAction.AttackEffect.NONE);
     }
 
+    public static void thornDmgAll(int amount, AbstractGameAction.AttackEffect effect) {
+        forAllMonstersLiving(mon -> thornDmg(mon, amount, effect));
+    }
+
+    public static void thornDmgTop(AbstractCreature m, int amount, AbstractGameAction.AttackEffect AtkFX) {
+        att(new DamageAction(m, new DamageInfo(AbstractDungeon.player, amount, DamageInfo.DamageType.THORNS), AtkFX));
+    }
+
+    public static void thornDmgTop(AbstractCreature m, int amount, AbstractGameAction.AttackEffect AtkFX, boolean superfast) {
+        att(new DamageAction(m, new DamageInfo(AbstractDungeon.player, amount, DamageInfo.DamageType.THORNS), AtkFX, superfast));
+    }
+
+    public static void thornDmgTop(AbstractCreature m, int amount) {
+        thornDmgTop(m, amount, AbstractGameAction.AttackEffect.NONE);
+    }
+
     public static void doAllDmg(int amount, AbstractGameAction.AttackEffect ae, DamageInfo.DamageType dt, boolean top) {
         if (top) {
             att(new DamageAllEnemiesAction(p(), amount, dt, ae));
@@ -305,6 +321,41 @@ public class Wiz {
         return false;
     }
 
+    public static AbstractGameAction.AttackEffect getRandomSlash() {
+        int x = AbstractDungeon.miscRng.random(0, 2);
+        if (x == 0)
+            return AbstractGameAction.AttackEffect.SLASH_DIAGONAL;
+        if (x == 1)
+            return AbstractGameAction.AttackEffect.SLASH_HORIZONTAL;
+        return AbstractGameAction.AttackEffect.SLASH_VERTICAL;
+    }
+
+    public static AbstractMonster getRandomEnemy() {
+        return AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+    }
+
+    public static AbstractMonster getLowestHealthEnemy() {
+        AbstractMonster weakest = null;
+        for (AbstractMonster m : getEnemies()) {
+            if (weakest == null)
+                weakest = m;
+            else if (weakest.currentHealth > m.currentHealth)
+                weakest = m;
+        }
+        return weakest;
+    }
+
+    public static AbstractMonster getHighestHealthEnemy() {
+        AbstractMonster strongest = null;
+        for (AbstractMonster m : getEnemies()) {
+            if (strongest == null)
+                strongest = m;
+            else if (strongest.currentHealth < m.currentHealth)
+                strongest = m;
+        }
+        return strongest;
+    }
+
     public static void discard(int amount, boolean isRandom) {
         atb(new DiscardAction(adp(), adp(), amount, isRandom));
     }
@@ -322,7 +373,11 @@ public class Wiz {
     }
 
     public static int getLogicalCardCost(AbstractCard c) {
-        if (c.costForTurn > 0 && !c.freeToPlayOnce) {
+        if (!c.freeToPlay()) {
+            if(c.cost <= -2) {
+                return 0;
+            } else if(c.cost == -1)
+                return EnergyPanel.totalCount;
             return c.costForTurn;
         }
         return 0;
