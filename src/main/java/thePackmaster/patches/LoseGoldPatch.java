@@ -2,7 +2,6 @@ package thePackmaster.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
@@ -19,9 +18,10 @@ public class LoseGoldPatch {
     }
 
     @SpirePostfixPatch
-    public static void loseGold(int goldAmount) {
+    public static void loseGold(AbstractPlayer player, int goldAmount) {
         if (!(AbstractDungeon.getCurrRoom() instanceof com.megacrit.cardcrawl.rooms.ShopRoom) &&
-                (AbstractDungeon.getCurrRoom()).phase != AbstractRoom.RoomPhase.COMBAT){
+                (AbstractDungeon.getCurrRoom()).phase != AbstractRoom.RoomPhase.COMBAT)
+        {
             for (AbstractPower p : AbstractDungeon.player.powers) {
                 if (p instanceof OnLoseGold) {
                     ((OnLoseGold) p).onLoseGold(goldAmount);
@@ -32,8 +32,6 @@ public class LoseGoldPatch {
                     ((OnLoseGold) orb).onLoseGold(goldAmount);
                 }
             }
-
-
         }
     }
 }
