@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePackmaster.cards.AbstractPackmasterCard;
 import thePackmaster.powers.royaltypack.NobleFormPower;
+import thePackmaster.powers.royaltypack.TrueNobleFormPower;
 import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
@@ -29,7 +30,8 @@ public class NobleForm extends AbstractPackmasterCard {
             Wiz.atb(new ApplyPowerAction(abstractPlayer, abstractPlayer, new NobleFormPower(abstractPlayer, 1)));
         }
         else {
-
+            Wiz.atb(new ApplyPowerAction(abstractPlayer, abstractPlayer, new TrueNobleFormPower(
+                    abstractPlayer, 1)));
         }
     }
 }
