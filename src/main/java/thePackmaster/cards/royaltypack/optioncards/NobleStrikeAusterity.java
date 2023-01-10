@@ -16,7 +16,7 @@ public class NobleStrikeAusterity extends AbstractPackmasterCard {
     public final static int GOLD_GAINED = 5;
 
     public NobleStrikeAusterity(){
-        super(ID, -1, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
         baseMagicNumber = 1;
     }
 

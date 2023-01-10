@@ -15,7 +15,7 @@ public class NobleStrikeTribute extends AbstractPackmasterCard {
     public final static int TRIBUTE_GOLD_AMOUNT = 5;
 
     public NobleStrikeTribute(){
-        super(ID, -1, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
         baseMagicNumber = 1;
     }
 
