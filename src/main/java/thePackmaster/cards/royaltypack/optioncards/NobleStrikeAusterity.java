@@ -1,6 +1,7 @@
 package thePackmaster.cards.royaltypack.optioncards;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.actions.utility.ConditionalDrawAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -9,12 +10,12 @@ import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
-public class NobleStrikeTribute extends AbstractPackmasterCard {
+public class NobleStrikeAusterity extends AbstractPackmasterCard {
 
-    public final static String ID = makeID("NobleStrikeTribute");
-    public final static int TRIBUTE_GOLD_AMOUNT = 5;
+    public final static String ID = makeID("NobleStrikeAusterity");
+    public final static int GOLD_GAINED = 5;
 
-    public NobleStrikeTribute(){
+    public NobleStrikeAusterity(){
         super(ID, -1, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
         baseMagicNumber = 1;
     }
@@ -31,6 +32,7 @@ public class NobleStrikeTribute extends AbstractPackmasterCard {
 
     @Override
     public void onChoseThisOption(){
-        Wiz.atb(new ConditionalDrawAction(magicNumber, CardType.ATTACK));
+        Wiz.atb(new GainGoldAction(GOLD_GAINED));
+        Wiz.atb(new DrawCardAction(magicNumber));
     }
 }
