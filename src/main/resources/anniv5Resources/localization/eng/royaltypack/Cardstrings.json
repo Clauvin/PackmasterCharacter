@@ -1,17 +1,18 @@
 {
   "${ModID}:NobleStrike": {
     "NAME": "Noble Strike",
-    "DESCRIPTION": "Deal 6 damage. Austerity: Gain 5 Gold and draw a card. Tribute 5: Draw an Attack."
+    "DESCRIPTION": "Deal 6 damage. Austerity: Gain 5 Gold and draw a card. Tribute 5: Draw an Attack.",
+    "UPGRADE_DESCRIPTION": "Deal 6 damage. Austerity: Gain 5 Gold and draw !M! cards. Tribute 5: Draw !M! Attacks."
   },
   "${ModID}:NobleStrikeTribute": {
     "NAME": "Noble Strike - Tribute",
     "DESCRIPTION": "Tribute 5: Draw an Attack.",
-    "UPGRADED_DESCRIPTION": "Tribute 5: Draw !M! Attacks."
+    "UPGRADE_DESCRIPTION": "Tribute 5: Draw !M! Attacks."
   },
   "${ModID}:NobleStrikeAusterity": {
     "NAME": "Noble Strike",
     "DESCRIPTION": "Gain 5 Gold and draw a card.",
-    "UPGRADED_DESCRIPTION": "Gain 5 Gold and draw !M! cards."
+    "UPGRADE_DESCRIPTION": "Gain 5 Gold and draw !M! cards."
   },
   "${ModID}:NobleSlash": {
     "NAME": "Noble Slash",
