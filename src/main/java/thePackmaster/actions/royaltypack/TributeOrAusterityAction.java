@@ -1,9 +1,11 @@
 package thePackmaster.actions.royaltypack;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import thePackmaster.util.Wiz;
 
 import java.util.ArrayList;
 
@@ -21,7 +23,7 @@ public class TributeOrAusterityAction extends AbstractGameAction {
     @Override
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
-            AbstractDungeon.cardRewardScreen.chooseOneOpen(this.choices);
+            Wiz.atb(new ChooseOneAction(this.choices));
             tickDuration();
             return;
         }
