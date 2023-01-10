@@ -13,6 +13,9 @@ public class TributeOrAusterityAction extends AbstractGameAction {
     public TributeOrAusterityAction(AbstractCard tribute, AbstractCard austerity) {
         this.duration = Settings.ACTION_DUR_FAST;
         this.actionType = ActionType.WAIT;
+        this.choices = new ArrayList<AbstractCard>();
+        choices.add(tribute);
+        choices.add(austerity);
     }
 
     @Override
