@@ -26,7 +26,7 @@ public class NobleStrike extends AbstractPackmasterCard {
 
     @Override
     public void upp() {
-        magicNumber += 1;
+        this.upgradeMagicNumber(1);
     }
 
     @Override
