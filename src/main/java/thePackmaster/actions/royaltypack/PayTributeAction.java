@@ -1,6 +1,7 @@
 package thePackmaster.actions.royaltypack;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
@@ -24,11 +25,11 @@ public class PayTributeAction extends AbstractGameAction {
     public void update() {
         int currentPlayerGold = AbstractDungeon.player.gold;
         if (currentPlayerGold >= amountToPay){
-            //Add LoseGoldAction
+            AbstractDungeon.player.loseGold(amountToPay);
         }
         else {
             int trueGoldAmountToLose = currentPlayerGold;
-            //Add LoseGoldAction
+            AbstractDungeon.player.loseGold(trueGoldAmountToLose);
             int HPToLose = amountToPay - trueGoldAmountToLose;
             if (HPToLose > 0){
                 Wiz.atb(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, HPToLose));
