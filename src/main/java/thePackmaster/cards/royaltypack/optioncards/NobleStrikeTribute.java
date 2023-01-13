@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.utility.ConditionalDrawAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePackmaster.actions.royaltypack.DrawSpecificCardTypeAction;
+import thePackmaster.actions.royaltypack.PayTributeAction;
 import thePackmaster.cards.AbstractPackmasterCard;
 import thePackmaster.util.Wiz;
 
@@ -35,7 +36,7 @@ public class NobleStrikeTribute extends AbstractPackmasterCard {
 
     @Override
     public void onChoseThisOption(){
-        //Add PayTributeAction
+        Wiz.atb(new PayTributeAction(TRIBUTE_GOLD_AMOUNT));
         for (int i = 0; i < magicNumber; i++){
             Wiz.atb(new DrawSpecificCardTypeAction(CardType.ATTACK));
         }
