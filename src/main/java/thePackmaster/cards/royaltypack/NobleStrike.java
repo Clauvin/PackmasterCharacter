@@ -37,8 +37,8 @@ public class NobleStrike extends AbstractPackmasterCard {
         AbstractPackmasterCard nsTributeChoiceCard = new NobleStrikeTribute();
         AbstractPackmasterCard nsAusterityChoiceCard = new NobleStrikeAusterity();
         for (int i = 0; i < magicNumber - 1; i++){
-            nsTributeChoiceCard.upp();
-            nsAusterityChoiceCard.upp();
+            nsTributeChoiceCard.upgrade();
+            nsAusterityChoiceCard.upgrade();
         }
 
 
