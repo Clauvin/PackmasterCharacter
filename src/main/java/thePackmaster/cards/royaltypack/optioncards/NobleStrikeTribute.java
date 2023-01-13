@@ -16,12 +16,12 @@ public class NobleStrikeTribute extends AbstractPackmasterCard {
 
     public NobleStrikeTribute(){
         super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
-        baseMagicNumber = 1;
+        baseMagicNumber = magicNumber = 1;
     }
 
     @Override
     public void upp() {
-        magicNumber += 1;
+        this.upgradeMagicNumber(1);
     }
 
     @Override

@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.actions.utility.ConditionalDrawAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePackmaster.cards.AbstractPackmasterCard;
 import thePackmaster.util.Wiz;
@@ -17,12 +18,12 @@ public class NobleStrikeAusterity extends AbstractPackmasterCard {
 
     public NobleStrikeAusterity(){
         super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
-        baseMagicNumber = 1;
+        baseMagicNumber = magicNumber = 1;
     }
 
     @Override
     public void upp() {
-        magicNumber += 1;
+        this.upgradeMagicNumber(1);
     }
 
     @Override
@@ -32,7 +33,7 @@ public class NobleStrikeAusterity extends AbstractPackmasterCard {
 
     @Override
     public void onChoseThisOption(){
-        Wiz.atb(new GainGoldAction(GOLD_GAINED));
-        Wiz.atb(new DrawCardAction(magicNumber));
+        this.addToBot(new GainGoldAction(GOLD_GAINED));
+        this.addToBot(new DrawCardAction(AbstractDungeon.player, magicNumber));
     }
 }
