@@ -11,6 +11,8 @@ import thePackmaster.cards.royaltypack.optioncards.NobleStrikeAusterity;
 import thePackmaster.cards.royaltypack.optioncards.NobleStrikeTribute;
 import thePackmaster.util.Wiz;
 
+import javax.swing.*;
+
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
 public class NobleStrike extends AbstractPackmasterCard {
@@ -21,7 +23,7 @@ public class NobleStrike extends AbstractPackmasterCard {
     public NobleStrike(){
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 6;
-        baseMagicNumber = 1;
+        baseMagicNumber = magicNumber = 1;
     }
 
     @Override
@@ -32,7 +34,15 @@ public class NobleStrike extends AbstractPackmasterCard {
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         dmg(abstractMonster, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
-        Wiz.atb(new TributeOrAusterityAction(new NobleStrikeTribute(), new NobleStrikeAusterity()));
+        AbstractPackmasterCard nsTributeChoiceCard = new NobleStrikeTribute();
+        AbstractPackmasterCard nsAusterityChoiceCard = new NobleStrikeAusterity();
+        for (int i = 0; i < magicNumber - 1; i++){
+            nsTributeChoiceCard.upp();
+            nsAusterityChoiceCard.upp();
+        }
+
+
+        Wiz.atb(new TributeOrAusterityAction(nsTributeChoiceCard, nsAusterityChoiceCard));
         //Also, add sfx and vfx sounds from Buriedbornes
     }
 }
