@@ -34,5 +34,7 @@ public class PayTributeAction extends AbstractGameAction {
                 Wiz.atb(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, HPToLose));
             }
         }
+
+        this.isDone = true;
     }
 }
