@@ -46,7 +46,15 @@
   },
   "${ModID}:Willpower": {
     "NAME": "Willpower",
-    "DESCRIPTION": "Austerity: Gain 1 Artifact. Tribute 10: Gain 1 Artifact and 1 Buffer."
+    "DESCRIPTION": "${ModID}:Austerity: Gain 1 Artifact. ${ModID}:Tribute 10: Gain 1 Artifact and 1 Buffer."
+  },
+  "${ModID}:WillpowerTribute": {
+    "NAME": "Tribute",
+    "DESCRIPTION": "Gain 1 Artifact and 1 Buffer."
+  },
+  "${ModID}:WillpowerAusterity": {
+    "NAME": "Austerity",
+    "DESCRIPTION": "Gain 1 Artifact."
   },
   "${ModID}:MajesticBloodline": {
     "NAME": "Majestic Bloodline",
