@@ -2,16 +2,24 @@ package thePackmaster.cards.royaltypack;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thePackmaster.actions.royaltypack.TributeOrAusterityAction;
 import thePackmaster.cards.AbstractPackmasterCard;
+import thePackmaster.cards.royaltypack.optioncards.NobleStrikeAusterity;
+import thePackmaster.cards.royaltypack.optioncards.NobleStrikeTribute;
+import thePackmaster.cards.royaltypack.optioncards.ThrowSoulstonesAusterity;
+import thePackmaster.cards.royaltypack.optioncards.ThrowSoulstonesTribute;
+import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
 public class ThrowSoulstones extends AbstractPackmasterCard {
 
     public final static String ID = makeID("ThrowSoulstones");
+    public final static int AUSTERITY_DAMAGE = 5;
+    public final static int TRIBUTE_DAMAGE = 15;
 
     public ThrowSoulstones(){
-        super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         baseDamage = 5;
         baseMagicNumber = 15;
     }
@@ -23,6 +31,14 @@ public class ThrowSoulstones extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        //Austerity: Deal 5 damage. Tribute 10: deal 15 damage AND play this card again.
+        AbstractPackmasterCard tsTributeChoiceCard = new ThrowSoulstonesTribute();
+        AbstractPackmasterCard tsAusterityChoiceCard = new ThrowSoulstonesAusterity();
+        for (int i = 0; i < magicNumber - 1; i++){
+            tsTributeChoiceCard.upgrade();
+            tsAusterityChoiceCard.upgrade();
+        }
+
+
+        Wiz.atb(new TributeOrAusterityAction(tsTributeChoiceCard, tsAusterityChoiceCard));
     }
 }
