@@ -28,7 +28,17 @@
   },
   "${ModID}:ThrowSoulstones": {
     "NAME": "Throw Soulstones",
-    "DESCRIPTION": "Austerity: Deal 5 damage. Tribute 10: deal 15 damage AND play this card again."
+    "DESCRIPTION": "${ModID}:Austerity: Deal 5 damage. ${ModID}:Tribute 10: deal 15 damage AND play this card again."
+  },
+  "${ModID}:ThrowSoulstonesTribute": {
+    "NAME": "Tribute",
+    "DESCRIPTION": "${ModID}:Tribute 10: Deal !D! damage to ALL enemies AND play this card again.",
+    "UPGRADE_DESCRIPTION": "${ModID}:Tribute 10: Deal !D! damage to ALL enemies AND play this card again."
+  },
+  "${ModID}:ThrowSoulstonesAusterity": {
+    "NAME": "Austerity",
+    "DESCRIPTION": "${ModID}:Austerity: Deal 5 damage to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "${ModID}:Austerity: Deal 5 damage to ALL enemies."
   },
   "${ModID}:BoundlessTalent": {
     "NAME": "Boundless Talent",
