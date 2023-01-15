@@ -43,7 +43,7 @@ public class ThrowSoulstonesAusterity extends AbstractPackmasterCard {
         } else {
             this.addToBot(new VFXAction(new BlizzardEffect(5, AbstractDungeon.getMonsters().shouldFlipVfx()), 0.5F));
         }
-        Wiz.doAllDmg(baseDamage, AbstractGameAction.AttackEffect.SLASH_VERTICAL, DamageInfo.DamageType.NORMAL, false);
+        Wiz.doAllDmg(baseDamage, AbstractGameAction.AttackEffect.NONE, DamageInfo.DamageType.NORMAL, false);
     }
 
 
