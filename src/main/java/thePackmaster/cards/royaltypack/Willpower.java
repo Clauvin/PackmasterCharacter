@@ -18,12 +18,12 @@ public class Willpower extends AbstractPackmasterCard {
 
     public Willpower(){
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        isInnate = false;
+        this.isInnate = false;
     }
 
     @Override
     public void upp() {
-        isInnate = true;
+        this.isInnate = true;
     }
 
     @Override
