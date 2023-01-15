@@ -22,7 +22,7 @@ public class ThrowSoulstonesAusterity extends AbstractPackmasterCard {
     public final static int DAMAGE = 5;
 
     public ThrowSoulstonesAusterity(){
-        super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
+        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
         baseDamage = damage = DAMAGE;
     }
 
