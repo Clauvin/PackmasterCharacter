@@ -20,13 +20,13 @@ public class ThrowSoulstones extends AbstractPackmasterCard {
 
     public ThrowSoulstones(){
         super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        baseDamage = 5;
-        baseMagicNumber = 15;
+        baseDamage = damage = 5;
+        baseMagicNumber = magicNumber = 15;
     }
 
     @Override
     public void upp() {
-        magicNumber += 5;
+        this.upgradeMagicNumber(5);
     }
 
     @Override
