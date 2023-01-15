@@ -2,7 +2,13 @@ package thePackmaster.cards.royaltypack;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thePackmaster.actions.royaltypack.TributeOrAusterityAction;
 import thePackmaster.cards.AbstractPackmasterCard;
+import thePackmaster.cards.royaltypack.optioncards.ThrowSoulstonesAusterity;
+import thePackmaster.cards.royaltypack.optioncards.ThrowSoulstonesTribute;
+import thePackmaster.cards.royaltypack.optioncards.WillpowerAusterity;
+import thePackmaster.cards.royaltypack.optioncards.WillpowerTribute;
+import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
@@ -11,7 +17,7 @@ public class Willpower extends AbstractPackmasterCard {
     public final static String ID = makeID("Willpower");
 
     public Willpower(){
-        super(ID, 0, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         isInnate = false;
     }
 
@@ -22,6 +28,13 @@ public class Willpower extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        //Austerity: Gain 1 Artifact. Tribute 10: Gain 1 Artifact and 1 Buffer.
+        AbstractPackmasterCard willTributeChoiceCard = new WillpowerTribute();
+        AbstractPackmasterCard willAusterityChoiceCard = new WillpowerAusterity();
+        if (this.upgraded){
+            willTributeChoiceCard.upgrade();
+            willAusterityChoiceCard.upgrade();
+        }
+
+        Wiz.atb(new TributeOrAusterityAction(willTributeChoiceCard, willAusterityChoiceCard));
     }
 }
