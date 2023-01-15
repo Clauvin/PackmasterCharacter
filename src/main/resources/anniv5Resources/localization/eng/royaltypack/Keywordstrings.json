@@ -4,13 +4,13 @@
     "NAMES": [
       "tribute"
     ],
-    "DESCRIPTION": "You may pay the amount in Gold to activate this effect. If you don't have enough Gold, pay the difference in HP instead."
+    "DESCRIPTION": "You may pay the amount in Gold to activate this effect. If you don't have enough Gold, pay the difference in HP."
   },
   {
     "PROPER_NAME": "Austerity",
     "NAMES": [
       "austerity"
     ],
-    "DESCRIPTION": "If you don't pay the Tribute cost, activate this effect instead."
+    "DESCRIPTION": "If you don't pay the Tribute cost, activate this effect."
   }
 ]
