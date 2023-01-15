@@ -46,7 +46,8 @@
   },
   "${ModID}:Willpower": {
     "NAME": "Willpower",
-    "DESCRIPTION": "${ModID}:Austerity: Gain 1 Artifact. ${ModID}:Tribute 10: Gain 1 Artifact and 1 Buffer."
+    "DESCRIPTION": "${ModID}:Austerity: Gain 1 Artifact. ${ModID}:Tribute 10: Gain 1 Artifact and 1 Buffer.",
+    "UPGRADE_DESCRIPTION": "Innate. NL ${ModID}:Austerity: Gain 1 Artifact. ${ModID}:Tribute 10: Gain 1 Artifact and 1 Buffer."
   },
   "${ModID}:WillpowerTribute": {
     "NAME": "Tribute",
