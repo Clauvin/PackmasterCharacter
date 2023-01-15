@@ -31,13 +31,12 @@ public class ThrowSoulstones extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        AbstractPackmasterCard tsTributeChoiceCard = new ThrowSoulstonesTribute(this);
+        AbstractPackmasterCard tsTributeChoiceCard = new ThrowSoulstonesTribute();//();(this);
         AbstractPackmasterCard tsAusterityChoiceCard = new ThrowSoulstonesAusterity();
         for (int i = 0; i < magicNumber - 1; i++){
             tsTributeChoiceCard.upgrade();
             tsAusterityChoiceCard.upgrade();
         }
-
 
         Wiz.atb(new TributeOrAusterityAction(tsTributeChoiceCard, tsAusterityChoiceCard));
     }
