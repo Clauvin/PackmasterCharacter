@@ -22,18 +22,20 @@ public class ThrowSoulstones extends AbstractPackmasterCard {
         super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         baseDamage = damage = 5;
         baseMagicNumber = magicNumber = 15;
+        baseSecondMagic = secondMagic = 0;
     }
 
     @Override
     public void upp() {
         this.upgradeMagicNumber(5);
+        secondMagic += 1;
     }
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         AbstractPackmasterCard tsTributeChoiceCard = new ThrowSoulstonesTribute(this);
         AbstractPackmasterCard tsAusterityChoiceCard = new ThrowSoulstonesAusterity();
-        for (int i = 0; i < magicNumber - 1; i++){
+        for (int i = 0; i <= secondMagic - 1; i++){
             tsTributeChoiceCard.upgrade();
             tsAusterityChoiceCard.upgrade();
         }
