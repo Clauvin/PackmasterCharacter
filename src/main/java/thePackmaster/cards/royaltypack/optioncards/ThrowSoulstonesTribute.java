@@ -2,6 +2,9 @@ package thePackmaster.cards.royaltypack.optioncards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
+import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -19,10 +22,12 @@ public class ThrowSoulstonesTribute extends AbstractPackmasterCard {
     public final static String ID = makeID("ThrowSoulstonesTribute");
     public final static int DAMAGE = 15;
     public final static int TRIBUTE_GOLD_AMOUNT = 10;
+    private AbstractCard originalThrowSoulstonesCard;
 
-    public ThrowSoulstonesTribute(){
+    public ThrowSoulstonesTribute(AbstractCard originalTSCard){
         super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
         baseDamage = damage = DAMAGE;
+        originalThrowSoulstonesCard = originalTSCard;
     }
 
     @Override
@@ -44,7 +49,7 @@ public class ThrowSoulstonesTribute extends AbstractPackmasterCard {
             this.addToBot(new VFXAction(new BlizzardEffect(this.damage, AbstractDungeon.getMonsters().shouldFlipVfx()), 0.5F));
         }
         Wiz.doAllDmg(baseDamage, AbstractGameAction.AttackEffect.NONE, DamageInfo.DamageType.NORMAL, false);
-
+        //Wiz.atb(new NewQueueCardAction(originalThrowSoulstonesCard, false));
     }
 
 }
