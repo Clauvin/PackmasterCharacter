@@ -2,6 +2,7 @@ package thePackmaster.cards.royaltypack.optioncards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.BufferPower;
@@ -27,8 +28,17 @@ public class WillpowerTribute extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        onChoseThisOption();
+    }
+
+    @Override
+    public void onChoseThisOption() {
         Wiz.atb(new PayTributeAction(TRIBUTE_GOLD_AMOUNT));
-        Wiz.atb(new ApplyPowerAction(abstractPlayer, abstractPlayer, new ArtifactPower(abstractPlayer, 2)));
-        Wiz.atb(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BufferPower(abstractPlayer, 2)));
+        Wiz.atb(new ApplyPowerAction(AbstractDungeon.player,
+                AbstractDungeon.player,
+                new ArtifactPower(AbstractDungeon.player, 1)));
+        Wiz.atb(new ApplyPowerAction(AbstractDungeon.player,
+                AbstractDungeon.player,
+                new BufferPower(AbstractDungeon.player, 1)));
     }
 }

@@ -3,6 +3,7 @@ package thePackmaster.cards.royaltypack.optioncards;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import thePackmaster.cards.AbstractPackmasterCard;
@@ -25,6 +26,13 @@ public class WillpowerAusterity extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        Wiz.atb(new ApplyPowerAction(abstractPlayer, abstractPlayer, new ArtifactPower(abstractPlayer, 2)));
+        onChoseThisOption();
+    }
+
+    @Override
+    public void onChoseThisOption() {
+        Wiz.atb(new ApplyPowerAction(AbstractDungeon.player,
+                AbstractDungeon.player,
+                new ArtifactPower(AbstractDungeon.player, 1)));
     }
 }
