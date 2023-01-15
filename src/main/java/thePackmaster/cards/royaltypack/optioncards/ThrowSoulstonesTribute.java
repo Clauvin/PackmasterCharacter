@@ -24,10 +24,10 @@ public class ThrowSoulstonesTribute extends AbstractPackmasterCard {
     public final static int TRIBUTE_GOLD_AMOUNT = 10;
     private AbstractCard originalThrowSoulstonesCard;
 
-    public ThrowSoulstonesTribute(AbstractCard originalTSCard){
+    public ThrowSoulstonesTribute(){//AbstractCard originalTSCard){
         super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
         baseDamage = damage = DAMAGE;
-        originalThrowSoulstonesCard = originalTSCard;
+        //originalThrowSoulstonesCard = originalTSCard;
     }
 
     @Override
