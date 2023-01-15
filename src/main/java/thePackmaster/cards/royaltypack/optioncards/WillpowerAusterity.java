@@ -25,6 +25,6 @@ public class WillpowerAusterity extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        Wiz.applyToSelf(new ArtifactPower(abstractPlayer, 1));
+        Wiz.atb(new ApplyPowerAction(abstractPlayer, abstractPlayer, new ArtifactPower(abstractPlayer, 2)));
     }
 }
