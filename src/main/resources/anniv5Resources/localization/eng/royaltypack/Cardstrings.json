@@ -65,6 +65,14 @@
     "NAME": "More Supplies!",
     "DESCRIPTION": "Austerity: Gain a random Potion. Tribute 30: fill your Potion Belt with random Potions."
   },
+  "${ModID}:MoreSuppliesTribute": {
+    "NAME": "Tribute",
+    "DESCRIPTION": "${ModID}:Tribute 30: fill your Potion Belt with random Potions."
+  },
+  "${ModID}:MoreSuppliesAusterity": {
+    "NAME": "Austerity",
+    "DESCRIPTION": "Gain a random Potion."
+  },
   "${ModID}:NobleForm": {
     "NAME": "Noble Form",
     "DESCRIPTION": "When you discard a card, draw a card. When you lose Gold, gain 5 gold.",
