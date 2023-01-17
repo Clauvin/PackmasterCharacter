@@ -26,6 +26,12 @@ public class MoreSuppliesTribute extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        onChoseThisOption();
+    }
+
+
+    @Override
+    public void onChoseThisOption() {
         Wiz.atb(new PayTributeAction(TRIBUTE_GOLD_AMOUNT));
         for (int i = 0; i < AbstractDungeon.player.potionSlots; i++){
             Wiz.atb(new ObtainPotionAction(AbstractDungeon.returnRandomPotion(false)));

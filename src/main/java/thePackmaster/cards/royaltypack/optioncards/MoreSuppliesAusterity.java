@@ -25,6 +25,11 @@ public class MoreSuppliesAusterity extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        onChoseThisOption();
+    }
+
+    @Override
+    public void onChoseThisOption() {
         Wiz.atb(new ObtainPotionAction(AbstractDungeon.returnRandomPotion(true)));
     }
 }
