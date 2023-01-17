@@ -1,8 +1,11 @@
 package thePackmaster.cards.royaltypack.optioncards;
 
+import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePackmaster.cards.AbstractPackmasterCard;
+import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
@@ -22,6 +25,6 @@ public class MoreSuppliesAusterity extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-
+        Wiz.atb(new ObtainPotionAction(AbstractDungeon.returnRandomPotion(true)));
     }
 }
