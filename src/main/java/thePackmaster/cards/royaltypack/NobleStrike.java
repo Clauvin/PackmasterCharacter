@@ -22,6 +22,7 @@ public class NobleStrike extends AbstractPackmasterCard {
 
     public NobleStrike(){
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        this.tags.add(CardTags.STRIKE);
         baseDamage = 6;
         baseMagicNumber = magicNumber = 1;
     }
