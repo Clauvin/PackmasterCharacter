@@ -42,7 +42,15 @@
   },
   "${ModID}:BoundlessTalent": {
     "NAME": "Boundless Talent",
-    "DESCRIPTION": "Austerity: Gain 5 Gold. Tribute 5: Copy one card in your hand, it has Exhaust. Exhaust."
+    "DESCRIPTION": "${ModID}:Austerity: Draw until your hand is full. ${ModID}:Tribute 5: Copy one card in your hand, it has Exhaust. NL Exhaust."
+  },
+  "${ModID}:BoundlessTalentTribute": {
+    "NAME": "Tribute",
+    "DESCRIPTION": "${ModID}:Tribute 5: Copy one card in your hand, it has Exhaust."
+  },
+  "${ModID}:BoundlessTalentAusterity": {
+    "NAME": "Austerity",
+    "DESCRIPTION": "Draw until your hand is full."
   },
   "${ModID}:Willpower": {
     "NAME": "Willpower",
