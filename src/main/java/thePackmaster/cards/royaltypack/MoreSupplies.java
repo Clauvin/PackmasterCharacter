@@ -18,6 +18,7 @@ public class MoreSupplies extends AbstractPackmasterCard {
 
     public MoreSupplies(){
         super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override
