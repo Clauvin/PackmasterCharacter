@@ -2,7 +2,13 @@ package thePackmaster.cards.royaltypack;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thePackmaster.actions.royaltypack.TributeOrAusterityAction;
 import thePackmaster.cards.AbstractPackmasterCard;
+import thePackmaster.cards.royaltypack.optioncards.BoundlessTalentAusterity;
+import thePackmaster.cards.royaltypack.optioncards.BoundlessTalentTribute;
+import thePackmaster.cards.royaltypack.optioncards.NobleStrikeAusterity;
+import thePackmaster.cards.royaltypack.optioncards.NobleStrikeTribute;
+import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
@@ -23,6 +29,13 @@ public class BoundlessTalent extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        //Austerity: Gain 5 Gold. Tribute 5: Copy one card in your hand, it has Exhaust. Exhaust.
+        AbstractPackmasterCard btTributeChoiceCard = new BoundlessTalentTribute();
+        AbstractPackmasterCard btAusterityChoiceCard = new BoundlessTalentAusterity();
+        for (int i = 0; i < this.timesUpgraded; i++){
+            btTributeChoiceCard.upgrade();
+            btAusterityChoiceCard.upgrade();
+        }
+
+        Wiz.atb(new TributeOrAusterityAction(btTributeChoiceCard, btAusterityChoiceCard));
     }
 }
