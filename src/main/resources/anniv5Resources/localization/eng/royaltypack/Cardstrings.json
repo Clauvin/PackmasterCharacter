@@ -63,7 +63,7 @@
   },
   "${ModID}:MoreSupplies": {
     "NAME": "More Supplies!",
-    "DESCRIPTION": "Austerity: Gain a random Potion. Tribute 30: fill your Potion Belt with random Potions."
+    "DESCRIPTION": "${ModID}:Austerity: Gain a random Potion. ${ModID}:Tribute 30: fill your Potion Belt with random Potions."
   },
   "${ModID}:MoreSuppliesTribute": {
     "NAME": "Tribute",
