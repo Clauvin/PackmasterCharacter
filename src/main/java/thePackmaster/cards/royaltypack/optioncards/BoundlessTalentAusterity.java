@@ -12,7 +12,7 @@ import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
-public class BoundlessTalentAusterity  extends AbstractPackmasterCard {
+public class BoundlessTalentAusterity extends AbstractPackmasterCard {
 
     public final static String ID = makeID("BoundlessTalentAusterity");
 
