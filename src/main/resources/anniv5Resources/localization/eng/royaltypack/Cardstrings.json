@@ -1,8 +1,8 @@
 {
   "${ModID}:NobleStrike": {
     "NAME": "Noble Strike",
-    "DESCRIPTION": "Deal 6 damage. ${ModID}:Austerity: Gain 5 Gold and draw a card. ${ModID}:Tribute 5: Draw an Attack.",
-    "UPGRADE_DESCRIPTION": "Deal 6 damage. ${ModID}:Austerity: Gain 5 Gold and draw !M! cards. ${ModID}:Tribute 5: Draw !M! Attacks."
+    "DESCRIPTION": "Deal 6 damage. ${ModID}:Tribute 5: Draw an Attack. ${ModID}:Austerity: Gain 5 Gold and draw a card.",
+    "UPGRADE_DESCRIPTION": "Deal 6 damage. ${ModID}:Tribute 5: Draw !M! Attacks. ${ModID}:Austerity: Gain 5 Gold and draw !M! cards. "
   },
   "${ModID}:NobleStrikeTribute": {
     "NAME": "Tribute",
@@ -24,11 +24,11 @@
   },
   "${ModID}:Forcefield": {
     "NAME": "Forcefield",
-    "DESCRIPTION": "Discard one random card. Austerity: Gain 8 Temp HP. Tribute 8: Gain 16 Temp HP."
+    "DESCRIPTION": "Discard one random card. ${ModID}:Tribute 8: Gain 16 Temp HP. ${ModID}:Austerity: Gain 8 Temp HP."
   },
   "${ModID}:ThrowSoulstones": {
     "NAME": "Throw Soulstones",
-    "DESCRIPTION": "${ModID}:Austerity: Deal !D! damage. ${ModID}:Tribute 10: deal !M! damage AND play this card again."
+    "DESCRIPTION": "${ModID}:Tribute 10: deal !M! damage AND play this card again. ${ModID}:Austerity: Deal !D! damage."
   },
   "${ModID}:ThrowSoulstonesTribute": {
     "NAME": "Tribute",
@@ -42,8 +42,8 @@
   },
   "${ModID}:BoundlessTalent": {
     "NAME": "Boundless Talent",
-    "DESCRIPTION": "${ModID}:Austerity: Draw until your hand is full. ${ModID}:Tribute 5: Copy one card in your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${ModID}:Austerity: Draw until your hand is full. ${ModID}:Tribute 5: Copy one card in your hand. NL Exhaustive !stslib:ex!."
+    "DESCRIPTION": "${ModID}:Tribute 5: Copy one card in your hand. ${ModID}:Austerity: Draw until your hand is full.  NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${ModID}:Tribute 5: Copy one card in your hand. ${ModID}:Austerity: Draw until your hand is full. NL Exhaustive !stslib:ex!."
   },
   "${ModID}:BoundlessTalentTribute": {
     "NAME": "Tribute",
@@ -55,8 +55,8 @@
   },
   "${ModID}:Willpower": {
     "NAME": "Willpower",
-    "DESCRIPTION": "${ModID}:Austerity: Gain 1 Artifact. ${ModID}:Tribute 10: Gain 1 Artifact and 1 Buffer.",
-    "UPGRADE_DESCRIPTION": "Innate. NL ${ModID}:Austerity: Gain 1 Artifact. ${ModID}:Tribute 10: Gain 1 Artifact and 1 Buffer."
+    "DESCRIPTION": "${ModID}:Tribute 10: Gain 1 Artifact and 1 Buffer. ${ModID}:Austerity: Gain 1 Artifact. ",
+    "UPGRADE_DESCRIPTION": "Innate. NL ${ModID}:Tribute 10: Gain 1 Artifact and 1 Buffer. ${ModID}:Austerity: Gain 1 Artifact. "
   },
   "${ModID}:WillpowerTribute": {
     "NAME": "Tribute",
@@ -72,7 +72,7 @@
   },
   "${ModID}:MoreSupplies": {
     "NAME": "More Supplies!",
-    "DESCRIPTION": "${ModID}:Austerity: Gain a random Potion. ${ModID}:Tribute 30: fill your Potion Belt with random Potions."
+    "DESCRIPTION": "${ModID}:Tribute 30: fill your Potion Belt with random Potions. ${ModID}:Austerity: Gain a random Potion. "
   },
   "${ModID}:MoreSuppliesTribute": {
     "NAME": "Tribute",
