@@ -14,17 +14,19 @@ import static thePackmaster.SpireAnniversary5Mod.makeID;
 public class Forcefield extends AbstractPackmasterCard {
 
     public final static String ID = makeID("Forcefield");
+    public final static int TRIBUTEMAXHP = 16;
+    public final static int AUSTERITYMAXHP = 8;
 
     public Forcefield() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseBlock = 8;
-        baseMagicNumber = 16;
+        baseMagicNumber = magicNumber = AUSTERITYMAXHP;
+        baseSecondMagic = secondMagic = TRIBUTEMAXHP;
     }
 
     @Override
     public void upp() {
-        baseBlock += 3;
-        magicNumber += 6;
+        this.upgradeMagicNumber(3);
+        this.upgradeSecondMagic(6);
     }
 
     @Override
