@@ -1,5 +1,7 @@
 package thePackmaster.cards.royaltypack.optioncards;
 
+import basemod.BaseMod;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.FastDrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -30,7 +32,11 @@ public class BoundlessTalentAusterity  extends AbstractPackmasterCard {
 
     @Override
     public void onChoseThisOption() {
-        int amountOfCardsToDraw = AbstractDungeon.player.gameHandSize - AbstractDungeon.player.hand.size();
-        Wiz.atb(new FastDrawCardAction(AbstractDungeon.player, amountOfCardsToDraw));
+        //BaseMod.logger.info(AbstractDungeon.player.hand.size());
+        int amountOfCardsToDraw = 10 - AbstractDungeon.player.hand.size();
+        for (int i = 0; i < amountOfCardsToDraw; i++){
+            Wiz.atb(new DrawCardAction(AbstractDungeon.player, 1));
+        }
+
     }
 }
