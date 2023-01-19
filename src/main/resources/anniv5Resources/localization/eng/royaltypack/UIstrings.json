@@ -5,5 +5,10 @@
       "Strong cards, but with downsides involving discard, Gold or HP costs.",
       "Levender"
     ]
+  },
+  "${ModID}:BoundlessTalentAction": {
+    "TEXT": [
+      "copy."
+    ]
   }
 }
