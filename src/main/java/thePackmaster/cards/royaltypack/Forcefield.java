@@ -7,6 +7,8 @@ import thePackmaster.actions.royaltypack.TributeOrAusterityAction;
 import thePackmaster.cards.AbstractPackmasterCard;
 import thePackmaster.cards.royaltypack.optioncards.BoundlessTalentAusterity;
 import thePackmaster.cards.royaltypack.optioncards.BoundlessTalentTribute;
+import thePackmaster.cards.royaltypack.optioncards.ForcefieldAusterity;
+import thePackmaster.cards.royaltypack.optioncards.ForcefieldTribute;
 import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
@@ -14,13 +16,13 @@ import static thePackmaster.SpireAnniversary5Mod.makeID;
 public class Forcefield extends AbstractPackmasterCard {
 
     public final static String ID = makeID("Forcefield");
-    public final static int TRIBUTEMAXHP = 16;
-    public final static int AUSTERITYMAXHP = 8;
+    public final static int TRIBUTE_MAXHP = 16;
+    public final static int AUSTERITY_MAXHP = 8;
 
     public Forcefield() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = AUSTERITYMAXHP;
-        baseSecondMagic = secondMagic = TRIBUTEMAXHP;
+        baseMagicNumber = magicNumber = AUSTERITY_MAXHP;
+        baseSecondMagic = secondMagic = TRIBUTE_MAXHP;
     }
 
     @Override
