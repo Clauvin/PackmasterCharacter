@@ -17,19 +17,16 @@ public class BoundlessTalentAction  extends AbstractGameAction {
 
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(
             SpireAnniversary5Mod.makeID("BoundlessTalentAction")).TEXT;
-    private int tributeCost;
 
-    public BoundlessTalentAction(int tributeCost) {
+    public BoundlessTalentAction() {
         this.duration = Settings.ACTION_DUR_FAST;
         this.actionType = ActionType.WAIT;
-        this.tributeCost = tributeCost;
     }
 
     @Override
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
             if (AbstractDungeon.player.hand.isEmpty()) {
-                Wiz.atb(new GainGoldAction(tributeCost));
                 this.isDone = true;
             } else if (AbstractDungeon.player.hand.size() == 1) {
                 doActionWithOneCardAtHand();
