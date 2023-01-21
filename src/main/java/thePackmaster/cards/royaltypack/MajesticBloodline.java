@@ -1,15 +1,23 @@
 package thePackmaster.cards.royaltypack;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thePackmaster.SpireAnniversary5Mod;
+import thePackmaster.actions.royaltypack.MajesticBloodlineAction;
 import thePackmaster.actions.royaltypack.TributeOrAusterityAction;
 import thePackmaster.cards.AbstractPackmasterCard;
 import thePackmaster.cards.royaltypack.optioncards.MajesticBloodlineAusterity;
 import thePackmaster.cards.royaltypack.optioncards.MajesticBloodlineTribute;
 import thePackmaster.cards.royaltypack.optioncards.ThrowSoulstonesAusterity;
 import thePackmaster.cards.royaltypack.optioncards.ThrowSoulstonesTribute;
+import thePackmaster.packs.AbstractCardPack;
 import thePackmaster.util.Wiz;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
@@ -31,21 +39,56 @@ public class MajesticBloodline extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        //Create action for shuffling card after Discovery type effect
+        Wiz.atb(new MajesticBloodlineAction(createPowers(magicNumber)));
         AbstractPackmasterCard mbTributeChoiceCard = new MajesticBloodlineTribute(this);
         AbstractPackmasterCard mbAusterityChoiceCard = new MajesticBloodlineAusterity();
 
         Wiz.atb(new TributeOrAusterityAction(mbTributeChoiceCard, mbAusterityChoiceCard));
     }
 
-    private void CreatePowers(int amount){
-        CardGroup powersToChooseFrom = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-        //Group power cards from packs currently chosen
-        for (int i = 0; i < amount; i++){
-            //Select a random power card
-            //If card is the same as some other already chosen, repeat
+    private ArrayList<AbstractCard> createPowers(int amount){
+        ArrayList<AbstractCardPack> currentPoolPacks = SpireAnniversary5Mod.currentPoolPacks;
+        ArrayList<AbstractCard> currentPowers = choosePowers(currentPoolPacks);
+        ArrayList<AbstractCard> cardsForThePlayerToChooseFrom = theChosenCards(currentPowers, amount);
+        return cardsForThePlayerToChooseFrom;
+    }
+
+    private ArrayList<AbstractCard> choosePowers (ArrayList<AbstractCardPack> currentPoolPacks){
+        ArrayList<AbstractCard> currentPowers = new ArrayList<AbstractCard>();
+        for (int i = 0; i < currentPoolPacks.size(); i++){
+            for (int j = 0; j < currentPoolPacks.get(i).cards.size(); j++){
+                AbstractCard card = currentPoolPacks.get(i).cards.get(j);
+                if (card.type == CardType.POWER){
+                    currentPowers.add(card);
+                }
+            }
+        }
+        return currentPowers;
+    }
+
+    private ArrayList<AbstractCard> theChosenCards(ArrayList<AbstractCard> currentPowers, int amount){
+
+        ArrayList theChosen = new ArrayList();
+
+        while(theChosen.size() != amount) {
+            boolean dupe = false;
+            AbstractCard tmp = currentPowers.get(AbstractDungeon.cardRandomRng.random(currentPowers.size() - 1));
+            Iterator iterator = theChosen.iterator();
+
+            while(iterator.hasNext()) {
+                AbstractCard c = (AbstractCard)iterator.next();
+                if (c.cardID.equals(tmp.cardID)) {
+                    dupe = true;
+                    break;
+                }
+            }
+
+            if (!dupe) {
+                theChosen.add(tmp.makeCopy());
+            }
         }
 
+        return theChosen;
     }
 
 
