@@ -28,7 +28,6 @@ public class MoreSupplies extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        //Austerity: Gain a random Potion. Tribute 30: fill your Potion Belt with random Potions.
         AbstractPackmasterCard moreSuppliesTributeChoiceCard = new MoreSuppliesTribute();
         AbstractPackmasterCard moreSuppliesAusterityChoiceCard = new MoreSuppliesAusterity();
         if (this.upgraded){
