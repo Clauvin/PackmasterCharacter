@@ -16,7 +16,7 @@
   },
   "${ModID}:NobleSlash": {
     "NAME": "Noble Slash",
-    "DESCRIPTION": "Discard one random card at the start of the next turn. Deal !D! damage.."
+    "DESCRIPTION": "Discard one random card at the start of the next turn. Deal !D! damage."
   },
   "${ModID}:WindShield": {
     "NAME": "Wind Shield",
