@@ -10,5 +10,10 @@
     "TEXT": [
       "copy."
     ]
+  },
+  "${ModID}:MajesticBloodlineAction": {
+    "TEXT": [
+      "shuffle on your draw pile."
+    ]
   }
 }
