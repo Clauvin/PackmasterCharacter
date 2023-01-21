@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.NightmarePower;
 import thePackmaster.SpireAnniversary5Mod;
 import thePackmaster.util.Wiz;
 
-public class BoundlessTalentAction  extends AbstractGameAction {
+public class BoundlessTalentAction extends AbstractGameAction {
 
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(
             SpireAnniversary5Mod.makeID("BoundlessTalentAction")).TEXT;
