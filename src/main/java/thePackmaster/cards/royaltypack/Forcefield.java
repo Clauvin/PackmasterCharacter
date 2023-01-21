@@ -16,7 +16,7 @@ import static thePackmaster.SpireAnniversary5Mod.makeID;
 public class Forcefield extends AbstractPackmasterCard {
 
     public final static String ID = makeID("Forcefield");
-    public final static int TRIBUTE_MAXHP = 16;
+    public final static int TRIBUTE_MAXHP = 14;
     public final static int AUSTERITY_MAXHP = 8;
 
     public Forcefield() {
