@@ -13,7 +13,7 @@
   },
   "${ModID}:MajesticBloodlineAction": {
     "TEXT": [
-      "shuffle on your draw pile."
+      "Choose one card to shuffle on your draw pile."
     ]
   }
 }

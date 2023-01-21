@@ -76,7 +76,15 @@
   },
   "${ModID}:MajesticBloodline": {
     "NAME": "Majestic Bloodline",
-    "DESCRIPTION": "Austerity: Gain 1 Artifact. Tribute 10: Gain 1 Artifact and 1 Buffer."
+    "DESCRIPTION": "Shuffle 1 of !M! random Powers to your draw pile. ${ModID}:Tribute 10: play this card again. Exhaust."
+  },
+  "${ModID}:MajesticBloodlineTribute": {
+    "NAME": "Tribute",
+    "DESCRIPTION": "${ModID}:Tribute 10: play this card again."
+  },
+  "${ModID}:MajesticBloodlineAusterity": {
+    "NAME": "Austerity",
+    "DESCRIPTION": "Nothing else happens."
   },
   "${ModID}:MoreSupplies": {
     "NAME": "More Supplies!",
