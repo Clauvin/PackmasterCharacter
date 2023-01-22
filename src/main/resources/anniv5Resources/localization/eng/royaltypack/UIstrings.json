@@ -15,5 +15,10 @@
     "TEXT": [
       "Choose one card to shuffle on your draw pile."
     ]
+  },
+  "${ModID}:WindShieldAction": {
+    "TEXT": [
+      "Discard any number of cards."
+    ]
   }
 }
