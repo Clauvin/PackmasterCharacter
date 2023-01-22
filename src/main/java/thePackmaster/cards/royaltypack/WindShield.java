@@ -9,15 +9,16 @@ import static thePackmaster.SpireAnniversary5Mod.makeID;
 
 public class WindShield extends AbstractPackmasterCard {
     public final static String ID = makeID("WindShield");
+    public final static int BLOCK_GIVEN_BY_DISCARD = 4;
 
     public WindShield(){
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = 4;
+        baseBlock = block =  BLOCK_GIVEN_BY_DISCARD;
     }
 
     @Override
     public void upp() {
-        baseBlock += 2;
+        upgradeBlock(2);
     }
 
     @Override
