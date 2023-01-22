@@ -9,14 +9,14 @@ import thePackmaster.cards.AbstractPackmasterCard;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
-public class Soulfire extends AbstractPackmasterCard {
+public class Soulfire extends AbstractWarlockCard {
     public final static String ID = makeID(Soulfire.class.getSimpleName());
 
     private static final int COST = 1;
 
     public Soulfire() {
         super(ID, COST, AbstractCard.CardType.ATTACK, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
-        baseDamage = 10;
+        baseDamage = 9;
     }
 
     @Override

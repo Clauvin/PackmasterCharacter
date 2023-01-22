@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePackmaster.SpireAnniversary5Mod;
 import thePackmaster.cards.AbstractPackmasterCard;
 
-public class SetUpShop extends AbstractPackmasterCard {
+public class SetUpShop extends AbstractBlacksmithCard {
 
     public final static String ID = SpireAnniversary5Mod.makeID("SetUpShop");
     private static final String SCREEN_MSG = CardCrawlGame.languagePack.getUIString(SpireAnniversary5Mod.makeID("SetUpShopScreen")).TEXT[0];
@@ -24,7 +24,7 @@ public class SetUpShop extends AbstractPackmasterCard {
         addToBot(new MultiGroupSelectAction(SCREEN_MSG,(list,map) ->
         {
             for (AbstractCard c : list) {
-                c.upgrade();
+                if (c.canUpgrade()) c.upgrade();
                 CardGroup group = map.get(c);
                 group.moveToDeck(c,false);
             }

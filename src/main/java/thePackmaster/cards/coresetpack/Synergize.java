@@ -23,22 +23,36 @@ public class Synergize extends AbstractPackmasterCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        blck();
+        allDmg(AbstractGameAction.AttackEffect.LIGHTNING);
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
                 isDone = true;
-                if (AbstractDungeon.actionManager.cardsPlayedThisCombat.size() >= 2) {
-                    AbstractCard c = AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 2);
-                    String parentID = SpireAnniversary5Mod.cardParentMap.get(c.cardID);
-                    if (!CoreSetPack.ID.equals(parentID)) {
-                        allDmg(AbstractGameAction.AttackEffect.LIGHTNING);
-                    }
+                if (otherPacksInHandCheck()) {
+                    blck();
                 }
             }
         });
     }
 
+    @Override
+    public void triggerOnGlowCheck() {
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        if (this.otherPacksInHandCheck()) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        }
+    }
+
+    private boolean otherPacksInHandCheck() {
+        long otherPacksInHand = AbstractDungeon.player.hand.group.stream()
+                .map(c -> SpireAnniversary5Mod.cardParentMap.getOrDefault(c.cardID, null))
+                .filter(s -> s != null && !s.equals(CoreSetPack.ID))
+                .distinct()
+                .count();
+        return otherPacksInHand >= 2;
+    }
+
+    @Override
     public void upp() {
         upgradeBlock(2);
         upgradeDamage(2);

@@ -1,11 +1,14 @@
 package thePackmaster.cards.coresetpack;
 
 
+import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePackmaster.cards.AbstractPackmasterCard;
+import thePackmaster.powers.coresetpack.MayhemFormPower;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
+import static thePackmaster.util.Wiz.applyToSelf;
 
 
 public class MayhemForm extends AbstractPackmasterCard {
@@ -13,15 +16,16 @@ public class MayhemForm extends AbstractPackmasterCard {
 
     public MayhemForm() {
         super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 3;
-   }
+        this.tags.add(BaseModCardTags.FORM);
+    }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //TODO
+        applyToSelf(new MayhemFormPower(2));
     }
 
     @Override
     public void upp() {
+        selfRetain = true;
     }
 
 

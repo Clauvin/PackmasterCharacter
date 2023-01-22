@@ -12,12 +12,12 @@ import thePackmaster.cards.AbstractPackmasterCard;
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
 
-public class IronShield extends AbstractPackmasterCard {
+public class IronShield extends AbstractQuietCard {
     public final static String ID = makeID("IronShield");
 
     public IronShield() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = 12;
+        baseBlock = 11;
         cardsToPreview = new Weight();
     }
 

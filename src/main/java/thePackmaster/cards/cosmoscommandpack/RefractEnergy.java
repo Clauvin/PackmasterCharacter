@@ -11,12 +11,12 @@ import thePackmaster.cards.marisapack.AmplifyCard;
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 import static thePackmaster.util.Wiz.vfx;
 
-public class RefractEnergy extends AbstractPackmasterCard implements AmplifyCard {
+public class RefractEnergy extends AbstractCosmosCard implements AmplifyCard {
     public final static String ID = makeID("RefractEnergy");
 
     public RefractEnergy() {
         super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
-        damage = baseDamage = 11;
+        damage = baseDamage = 14;
         this.isMultiDamage = true;
     }
 
@@ -41,6 +41,6 @@ public class RefractEnergy extends AbstractPackmasterCard implements AmplifyCard
     }
 
     public void upp() {
-        upgradeDamage(3);
+        upgradeDamage(4);
     }
 }

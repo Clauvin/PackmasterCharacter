@@ -61,6 +61,8 @@ To test your cards simply use the Custom Draft toggle in the character select sc
 * We have some lists and maps to get card packs, these are allPacks, packsByID, cardParentMap
 * If you want to add your own CardBack for your Pack preview card, you can do so by adding it to the `images/512` and `1024` with the png file having the same name as your pack
 * Additional Credits can be added to a pack where assets or inspiration have been taken from elsewhere. This can simply be done by passing a credits string to the super method of the pack's constructor
+* AbstractPackMasterOrb exists to manage pack orbs with non standard effect timing for interaction purposes.
+* Additionally this file contains getpacklimitedorb(usecardrng) to pull a random orb from what would be available in your packs.
 
 ### Reminders and veto ruling
 Please look at the Google Docs to get a full refresher of the rules for your contribution. Specifically the complexity cap is important.
@@ -75,3 +77,19 @@ Here is a TL;DR:
 
 And finally, as the person merging all PRs other reviewers or I (Gk/erasels) may ask you to make changes to your Pack in case some cards lie outside the power curve or skirt the rules too much.
 Please don't be discouraged if your Pack isn't instantly merged.
+
+### HATS
+
+Packmaster can equip different cosmetic hats, one for every pack. Each one is locked until you've won a run with its respective pack in your pool.
+
+This does not add any mandatory work for packs. There are three ways to get a hat added to your pack:
+
+1) Art it yourself, using the new Hat template PSD (PackmasterHatTemplate.psd, included in this repo).  Add a png export of your hat into the resources/hats folder, with the naming convention of <PackID>Hat.png, and it will automatically be detected and used.
+
+2) Write up a simple description to AlexMdle of your requested hat.
+
+3) Do nothing, in which case a hat will be generated for your pack by AlexMdle.
+
+Hats also come with a display name and flavor text, which are plucked from the UIStrings.json of your respective pack, with the ID "<yourID>Hat".  See the DownfallPack UIStrings for examples.
+
+Optionally, hats can hide the character's hair, for cases like Helmets.  This is done by adding "hatHidesHair = true" to your pack initialization. See the Bellord pack initialization file for an example.

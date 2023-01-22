@@ -1,7 +1,7 @@
 {
   "${ModID}:MissileStrike": {
     "NAME": "Missile Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Deal !M! damage to ALL enemies."
+    "DESCRIPTION": "Deal !D! damage. NL Deal !${ModID}:sd! damage to ALL enemies."
   },
   "${ModID}:MagicDart": {
     "NAME": "Magic Dart",
@@ -15,8 +15,8 @@
   },
   "${ModID}:Potential": {
     "NAME": "Potential",
-    "DESCRIPTION": "Gain !M! Temporary HP. NL Draw !${ModID}:m2! card. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Temporary HP. NL Draw !${ModID}:m2! cards. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Temporary_HP. NL Draw !${ModID}:m2! card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Temporary_HP. NL Draw !${ModID}:m2! cards. NL Exhaust."
   },
   "${ModID}:Aura": {
     "NAME": "Aura",

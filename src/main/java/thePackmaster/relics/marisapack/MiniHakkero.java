@@ -8,10 +8,10 @@ import thePackmaster.util.Wiz;
 
 public class MiniHakkero extends AbstractPackmasterRelic {
     public static final String ID = SpireAnniversary5Mod.makeID("MiniHakkero");
-    private static final int GAIN_AMT = 1;
+    private static final int GAIN_AMT = 2;
 
     public MiniHakkero() {
-        super(ID, RelicTier.COMMON, LandingSound.MAGICAL, MarisaPack.ID);
+        super(ID, RelicTier.UNCOMMON, LandingSound.MAGICAL, MarisaPack.ID);
     }
 
     @Override

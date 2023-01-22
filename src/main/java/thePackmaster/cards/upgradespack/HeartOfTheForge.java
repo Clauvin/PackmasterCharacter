@@ -4,9 +4,10 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePackmaster.SpireAnniversary5Mod;
+import thePackmaster.actions.upgradespack.SpecificUpgradeWithVfxAction;
 import thePackmaster.cards.AbstractPackmasterCard;
 
-public class HeartOfTheForge extends AbstractPackmasterCard {
+public class HeartOfTheForge extends AbstractBlacksmithCard {
 
     public final static String ID = SpireAnniversary5Mod.makeID("HeartOfTheForge");
 
@@ -28,6 +29,11 @@ public class HeartOfTheForge extends AbstractPackmasterCard {
         upgraded = true;
         name = cardStrings.NAME + "+" + timesUpgraded;
         initializeTitle();
+    }
+
+    @Override
+    public void onRetained() {
+        addToBot(new SpecificUpgradeWithVfxAction(this));
     }
 
     public void upp() {
