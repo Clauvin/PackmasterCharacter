@@ -32,8 +32,8 @@ public class WindShieldAction extends AbstractGameAction {
             if (AbstractDungeon.player.hand.isEmpty()) {
                 this.isDone = true;
             } else {
-                AbstractDungeon.handCardSelectScreen.open(TEXT[0], 1, true, false);
                 this.tickDuration();
+                AbstractDungeon.handCardSelectScreen.open(TEXT[0], 10, true, false);
             }
         } else {
             doAction();
@@ -41,7 +41,7 @@ public class WindShieldAction extends AbstractGameAction {
     }
 
     private void doAction(){
-        if (AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
+        if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             if (AbstractDungeon.handCardSelectScreen.selectedCards.size() != 0){
                 for (int i = AbstractDungeon.handCardSelectScreen.selectedCards.size() - 1; i >= 0; i--){
                     Wiz.atb(new DiscardSpecificCardAction(AbstractDungeon.handCardSelectScreen.selectedCards.getBottomCard()));
