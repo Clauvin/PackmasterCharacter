@@ -3,7 +3,9 @@ package thePackmaster.cards.royaltypack;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thePackmaster.actions.royaltypack.WindShieldAction;
 import thePackmaster.cards.AbstractPackmasterCard;
+import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
@@ -24,7 +26,6 @@ public class WindShield extends AbstractPackmasterCard {
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         int currentHandSize = abstractPlayer.hand.size();
-        this.addToBot(new DiscardAction(abstractPlayer, abstractPlayer, currentHandSize, false));
-        //Create Action to Gain Block N Times, where N is an amount of cards discarded.
+        Wiz.atb(new WindShieldAction(block));
     }
 }
