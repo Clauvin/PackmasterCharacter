@@ -18,7 +18,7 @@
   },
   "${ModID}:WindShieldAction": {
     "TEXT": [
-      "Discard any number of cards."
+      "discard them."
     ]
   }
 }
