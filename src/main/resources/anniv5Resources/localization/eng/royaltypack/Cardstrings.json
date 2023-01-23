@@ -68,7 +68,7 @@
   },
   "${ModID}:WillpowerTribute": {
     "NAME": "Tribute",
-    "DESCRIPTION": "Gain 1 Artifact and 1 Buffer."
+    "DESCRIPTION": "${ModID}:Tribute 10: Gain 1 Artifact and 1 Buffer."
   },
   "${ModID}:WillpowerAusterity": {
     "NAME": "Austerity",
