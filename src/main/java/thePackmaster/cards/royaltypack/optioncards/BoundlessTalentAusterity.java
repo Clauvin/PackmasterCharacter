@@ -20,6 +20,7 @@ public class BoundlessTalentAusterity extends AbstractPackmasterCard {
     public BoundlessTalentAusterity(int maxDrawHandSize){
         super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
         this.maxDrawHandSize = maxDrawHandSize;
+        baseMagicNumber = magicNumber = this.maxDrawHandSize;
     }
 
     @Override
