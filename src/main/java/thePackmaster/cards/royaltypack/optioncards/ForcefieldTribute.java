@@ -13,17 +13,24 @@ import static thePackmaster.SpireAnniversary5Mod.makeID;
 public class ForcefieldTribute extends AbstractPackmasterCard {
 
     public final static String ID = makeID("ForcefieldTribute");
-    public final static int TEMPORARY_HP_GAINED = 14;
-    public final static int TRIBUTE_GOLD_AMOUNT = 8;
+    public final static int TRIBUTE_GOLD_AMOUNT = 9;
+    private int temporaryHpGained;
 
     public ForcefieldTribute(){
         super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
-        baseMagicNumber = magicNumber = TEMPORARY_HP_GAINED;
+        temporaryHpGained = 0;
+        baseMagicNumber = magicNumber = temporaryHpGained;
+    }
+
+    public ForcefieldTribute(int temporaryHpGained){
+        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
+        this.temporaryHpGained = temporaryHpGained;
+        baseMagicNumber = magicNumber = this.temporaryHpGained;
     }
 
     @Override
     public void upp() {
-        this.upgradeMagicNumber(6);
+        this.upgradeMagicNumber(3);
     }
 
     @Override
