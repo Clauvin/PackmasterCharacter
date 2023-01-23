@@ -37,10 +37,6 @@ public class Forcefield extends AbstractPackmasterCard {
 
         AbstractPackmasterCard forcefieldTributeChoiceCard = new ForcefieldTribute(secondMagic);
         AbstractPackmasterCard forcefieldAusterityChoiceCard = new ForcefieldAusterity(magicNumber);
-        for (int i = 0; i < this.timesUpgraded; i++){
-            forcefieldTributeChoiceCard.upgrade();
-            forcefieldAusterityChoiceCard.upgrade();
-        }
 
         Wiz.atb(new TributeOrAusterityAction(forcefieldTributeChoiceCard, forcefieldAusterityChoiceCard));
     }
