@@ -28,7 +28,7 @@ public class ForcefieldAusterity extends AbstractPackmasterCard {
 
     @Override
     public void upp() {
-        this.upgradeMagicNumber(3);
+
     }
 
     @Override
