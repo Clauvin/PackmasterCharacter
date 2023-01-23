@@ -17,6 +17,12 @@ public class BoundlessTalentAusterity extends AbstractPackmasterCard {
     public final static String ID = makeID("BoundlessTalentAusterity");
     private int maxDrawHandSize;
 
+    public BoundlessTalentAusterity(){
+        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
+        this.maxDrawHandSize = 4;
+        baseMagicNumber = magicNumber = this.maxDrawHandSize;
+    }
+
     public BoundlessTalentAusterity(int maxDrawHandSize){
         super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
         this.maxDrawHandSize = maxDrawHandSize;
