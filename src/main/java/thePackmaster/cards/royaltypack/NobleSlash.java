@@ -17,7 +17,7 @@ public class NobleSlash extends AbstractPackmasterCard {
 
     public NobleSlash(){
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = damage = 15;
+        baseDamage = damage = 10;
     }
 
     @Override
@@ -27,9 +27,10 @@ public class NobleSlash extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        dmg(abstractMonster, AbstractGameAction.AttackEffect.SLASH_HEAVY);
         Wiz.atb(new DiscardAction(abstractPlayer, abstractPlayer, 1, true));
         Wiz.atb(new ApplyPowerAction(abstractPlayer, abstractPlayer,
                 new DrawReductionPower(abstractPlayer, 1)));
-        dmg(abstractMonster, AbstractGameAction.AttackEffect.SLASH_HEAVY);
+
     }
 }
