@@ -15,27 +15,26 @@ import static thePackmaster.SpireAnniversary5Mod.makeID;
 public class ThrowSoulstones extends AbstractPackmasterCard {
 
     public final static String ID = makeID("ThrowSoulstones");
-    public final static int AUSTERITY_DAMAGE = 5;
     public final static int TRIBUTE_DAMAGE = 15;
+    public final static int AUSTERITY_DAMAGE = 5;
+
 
     public ThrowSoulstones(){
         super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        baseDamage = damage = 5;
-        baseMagicNumber = magicNumber = 15;
-        baseSecondMagic = secondMagic = 0;
+        baseDamage = damage = TRIBUTE_DAMAGE;
+        baseSecondDamage = secondDamage = AUSTERITY_DAMAGE;
     }
 
     @Override
     public void upp() {
-        this.upgradeMagicNumber(5);
-        secondMagic += 1;
+        this.upgradeDamage(5);
     }
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         AbstractPackmasterCard tsTributeChoiceCard = new ThrowSoulstonesTribute(this);
         AbstractPackmasterCard tsAusterityChoiceCard = new ThrowSoulstonesAusterity();
-        for (int i = 0; i <= secondMagic - 1; i++){
+        for (int i = 0; i < this.timesUpgraded; i++){
             tsTributeChoiceCard.upgrade();
             tsAusterityChoiceCard.upgrade();
         }
