@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.vfx.GainGoldTextEffect;
 import thePackmaster.util.Wiz;
 
 import javax.swing.*;
@@ -25,6 +26,7 @@ public class PayTributeAction extends AbstractGameAction {
     public void update() {
         int currentPlayerGold = AbstractDungeon.player.gold;
         if (currentPlayerGold >= amountToPay){
+            AbstractDungeon.effectList.add(new GainGoldTextEffect(-amountToPay));
             AbstractDungeon.player.loseGold(amountToPay);
         }
         else {
