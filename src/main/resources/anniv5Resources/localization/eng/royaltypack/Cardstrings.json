@@ -36,7 +36,7 @@
   },
   "${ModID}:ThrowSoulstones": {
     "NAME": "Throw Soulstones",
-    "DESCRIPTION": "${ModID}:Tribute 10: deal !M! damage AND play this card again. ${ModID}:Austerity: Deal !D! damage."
+    "DESCRIPTION": "${ModID}:Tribute 10: deal !D! damage to ALL enemies AND play this card again. ${ModID}:Austerity: Deal !${ModID}:d2! damage."
   },
   "${ModID}:ThrowSoulstonesTribute": {
     "NAME": "Tribute",
