@@ -39,7 +39,8 @@ public class MajesticBloodlineAction extends AbstractGameAction {
         if (AbstractDungeon.cardRewardScreen.discoveryCard != null) {
             AbstractCard tmpCard = AbstractDungeon.cardRewardScreen.discoveryCard.
                     makeStatEquivalentCopy();
-            AbstractDungeon.player.drawPile.addToRandomSpot(tmpCard);
+            AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(tmpCard,
+                    Settings.WIDTH/2, 3*Settings.HEIGHT/4, true));
             AbstractDungeon.cardRewardScreen.discoveryCard = null;
             this.isDone = true;
         }
