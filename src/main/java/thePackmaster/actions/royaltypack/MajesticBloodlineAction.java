@@ -1,12 +1,15 @@
 package thePackmaster.actions.royaltypack;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import thePackmaster.SpireAnniversary5Mod;
+import thePackmaster.util.Wiz;
 
 import java.util.ArrayList;
 
@@ -18,7 +21,7 @@ public class MajesticBloodlineAction extends AbstractGameAction {
 
     public MajesticBloodlineAction(ArrayList<AbstractCard> powers) {
         this.duration = Settings.ACTION_DUR_FAST;
-        this.actionType = ActionType.WAIT;
+        this.actionType = ActionType.SHUFFLE;
         this.powers = powers;
     }
 
