@@ -25,7 +25,6 @@ public class WindShield extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        int currentHandSize = abstractPlayer.hand.size();
         Wiz.atb(new WindShieldAction(block));
     }
 }
