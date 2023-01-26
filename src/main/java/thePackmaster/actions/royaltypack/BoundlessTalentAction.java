@@ -20,7 +20,7 @@ public class BoundlessTalentAction extends AbstractGameAction {
 
     public BoundlessTalentAction() {
         this.duration = Settings.ACTION_DUR_FAST;
-        this.actionType = ActionType.WAIT;
+        this.actionType = ActionType.SPECIAL;
     }
 
     @Override

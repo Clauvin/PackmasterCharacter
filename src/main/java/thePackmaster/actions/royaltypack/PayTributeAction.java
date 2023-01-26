@@ -19,7 +19,7 @@ public class PayTributeAction extends AbstractGameAction {
 
     public PayTributeAction(int amountToPay) {
         this.duration = Settings.ACTION_DUR_FAST;
-        this.actionType = ActionType.WAIT;
+        this.actionType = ActionType.SPECIAL;
         this.amountToPay = amountToPay;
     }
 
