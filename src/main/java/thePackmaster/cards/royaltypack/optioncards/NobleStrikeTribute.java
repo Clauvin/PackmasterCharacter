@@ -1,5 +1,6 @@
 package thePackmaster.cards.royaltypack.optioncards;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.unique.AttackFromDeckToHandAction;
 import com.megacrit.cardcrawl.actions.utility.ConditionalDrawAction;
@@ -14,6 +15,7 @@ import javax.smartcardio.Card;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
+@AutoAdd.Ignore
 public class NobleStrikeTribute extends AbstractPackmasterCard {
 
     public final static String ID = makeID("NobleStrikeTribute");

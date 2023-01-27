@@ -1,5 +1,6 @@
 package thePackmaster.cards.royaltypack.optioncards;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
@@ -19,6 +20,7 @@ import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
+@AutoAdd.Ignore
 public class ThrowSoulstonesTribute extends AbstractPackmasterCard {
 
     public final static String ID = makeID("ThrowSoulstonesTribute");

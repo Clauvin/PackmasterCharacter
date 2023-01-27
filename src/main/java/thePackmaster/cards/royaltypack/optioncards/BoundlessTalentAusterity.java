@@ -1,5 +1,6 @@
 package thePackmaster.cards.royaltypack.optioncards;
 
+import basemod.AutoAdd;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.FastDrawCardAction;
@@ -12,6 +13,7 @@ import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
+@AutoAdd.Ignore
 public class BoundlessTalentAusterity extends AbstractPackmasterCard {
 
     public final static String ID = makeID("BoundlessTalentAusterity");
