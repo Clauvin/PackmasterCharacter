@@ -25,6 +25,11 @@ public class ThrowSoulstonesAusterity extends AbstractPackmasterCard {
         baseDamage = damage = DAMAGE;
     }
 
+    public ThrowSoulstonesAusterity(int damageToDo){
+        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
+        baseDamage = damage = damageToDo;
+    }
+
     @Override
     public void upp() {
 
@@ -42,7 +47,7 @@ public class ThrowSoulstonesAusterity extends AbstractPackmasterCard {
         } else {
             this.addToBot(new VFXAction(new BlizzardEffect(5, AbstractDungeon.getMonsters().shouldFlipVfx()), 0.5F));
         }
-        Wiz.doAllDmg(baseDamage, AbstractGameAction.AttackEffect.NONE, DamageInfo.DamageType.NORMAL, false);
+        Wiz.doAllDmg(damage, AbstractGameAction.AttackEffect.NONE, DamageInfo.DamageType.NORMAL, false);
     }
 
 

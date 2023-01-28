@@ -33,9 +33,9 @@ public class ThrowSoulstonesTribute extends AbstractPackmasterCard {
         baseDamage = damage = DAMAGE;
     }
 
-    public ThrowSoulstonesTribute(AbstractCard originalTSCard){
+    public ThrowSoulstonesTribute(AbstractCard originalTSCard, int damageToDo){
         super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
-        baseDamage = damage = DAMAGE;
+        baseDamage = damage = damageToDo;
         originalThrowSoulstonesCard = originalTSCard;
     }
 
@@ -57,7 +57,7 @@ public class ThrowSoulstonesTribute extends AbstractPackmasterCard {
         } else {
             this.addToBot(new VFXAction(new BlizzardEffect(this.damage, AbstractDungeon.getMonsters().shouldFlipVfx()), 0.5F));
         }
-        Wiz.doAllDmg(baseDamage, AbstractGameAction.AttackEffect.NONE, DamageInfo.DamageType.NORMAL, false);
+        Wiz.doAllDmg(damage, AbstractGameAction.AttackEffect.NONE, DamageInfo.DamageType.NORMAL, false);
         if (originalThrowSoulstonesCard != null){
             Wiz.atb(new NewQueueCardAction(originalThrowSoulstonesCard, false));
         }
