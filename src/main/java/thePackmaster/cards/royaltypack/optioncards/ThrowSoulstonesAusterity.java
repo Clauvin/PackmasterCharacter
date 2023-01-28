@@ -3,6 +3,7 @@ package thePackmaster.cards.royaltypack.optioncards;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -47,7 +48,7 @@ public class ThrowSoulstonesAusterity extends AbstractPackmasterCard {
         } else {
             this.addToBot(new VFXAction(new BlizzardEffect(5, AbstractDungeon.getMonsters().shouldFlipVfx()), 0.5F));
         }
-        Wiz.doAllDmg(damage, AbstractGameAction.AttackEffect.NONE, DamageInfo.DamageType.NORMAL, false);
+        addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, new int[]{damage}, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
     }
 
 

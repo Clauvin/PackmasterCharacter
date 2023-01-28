@@ -3,6 +3,7 @@ package thePackmaster.cards.royaltypack.optioncards;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -57,7 +58,7 @@ public class ThrowSoulstonesTribute extends AbstractPackmasterCard {
         } else {
             this.addToBot(new VFXAction(new BlizzardEffect(this.damage, AbstractDungeon.getMonsters().shouldFlipVfx()), 0.5F));
         }
-        Wiz.doAllDmg(damage, AbstractGameAction.AttackEffect.NONE, DamageInfo.DamageType.NORMAL, false);
+        addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, new int[]{damage}, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
         if (originalThrowSoulstonesCard != null){
             Wiz.atb(new NewQueueCardAction(originalThrowSoulstonesCard, false));
         }
