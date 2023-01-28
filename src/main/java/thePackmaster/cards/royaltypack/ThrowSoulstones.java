@@ -32,8 +32,8 @@ public class ThrowSoulstones extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        AbstractPackmasterCard tsTributeChoiceCard = new ThrowSoulstonesTribute(this);
-        AbstractPackmasterCard tsAusterityChoiceCard = new ThrowSoulstonesAusterity();
+        AbstractPackmasterCard tsTributeChoiceCard = new ThrowSoulstonesTribute(this, damage);
+        AbstractPackmasterCard tsAusterityChoiceCard = new ThrowSoulstonesAusterity(secondDamage);
         for (int i = 0; i < this.timesUpgraded; i++){
             tsTributeChoiceCard.upgrade();
             tsAusterityChoiceCard.upgrade();
