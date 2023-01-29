@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import thePackmaster.SpireAnniversary5Mod;
 import thePackmaster.cards.downfallpack.*;
+import thePackmaster.cards.royaltypack.*;
 
 import java.util.ArrayList;
 
@@ -21,16 +22,16 @@ public class RoyaltyPack extends AbstractCardPack {
     @Override
     public ArrayList<String> getCards() {
         ArrayList<String> cards = new ArrayList<>();
-        cards.add(AwakenDeath.ID);
-        cards.add(Chronoboost.ID);
-        cards.add(DefensiveMode.ID);
-        cards.add(Execute.ID);
-        cards.add(GhostflameStrike.ID);
-        cards.add(HyperBeam.ID);
-        cards.add(InvincibleStrength.ID);
-        cards.add(PrepareCrush.ID);
-        cards.add(ShapersBlessing.ID);
-        cards.add(YouAreMine.ID);
+        cards.add(NobleStrike.ID);
+        cards.add(NobleSlash.ID);
+        cards.add(WindShield.ID);
+        cards.add(Forcefield.ID);
+        cards.add(ThrowSoulstones.ID);
+        cards.add(BoundlessTalent.ID);
+        cards.add(Willpower.ID);
+        cards.add(MajesticBloodline.ID);
+        cards.add(MoreSupplies.ID);
+        cards.add(NobleForm.ID);
         return cards;
     }
 }

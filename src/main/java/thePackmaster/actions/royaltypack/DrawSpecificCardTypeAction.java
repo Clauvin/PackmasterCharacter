@@ -17,7 +17,7 @@ public class DrawSpecificCardTypeAction extends AbstractGameAction {
 
     public DrawSpecificCardTypeAction(AbstractCard.CardType cardType) {
         this.duration = Settings.ACTION_DUR_FAST;
-        this.actionType = ActionType.WAIT;
+        this.actionType = ActionType.DRAW;
         this.cardType = cardType;
     }
 

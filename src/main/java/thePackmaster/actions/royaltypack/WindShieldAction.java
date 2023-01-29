@@ -33,7 +33,7 @@ public class WindShieldAction extends AbstractGameAction {
                 this.isDone = true;
             } else {
                 this.tickDuration();
-                AbstractDungeon.handCardSelectScreen.open(TEXT[0], 10, true, false);
+                AbstractDungeon.handCardSelectScreen.open(TEXT[0], 10, true, true);
             }
         } else {
             doAction();

@@ -20,14 +20,15 @@ public class BoundlessTalent extends AbstractPackmasterCard {
 
     public BoundlessTalent() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = 5;
-        baseSecondMagic = 1;
+        baseMagicNumber = magicNumber = 4;
+        baseSecondMagic = secondMagic = 1;
         this.exhaust = true;
     }
 
     @Override
     public void upp() {
-        baseSecondMagic += 1;
+        upgradeMagicNumber(1);
+        upgradeSecondMagic(1);
         this.exhaust = false;
         ExhaustiveVariable.setBaseValue(this, EXHAUSTIVE);
     }
@@ -35,7 +36,7 @@ public class BoundlessTalent extends AbstractPackmasterCard {
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         AbstractPackmasterCard btTributeChoiceCard = new BoundlessTalentTribute();
-        AbstractPackmasterCard btAusterityChoiceCard = new BoundlessTalentAusterity();
+        AbstractPackmasterCard btAusterityChoiceCard = new BoundlessTalentAusterity(magicNumber);
         for (int i = 0; i < this.timesUpgraded; i++){
             btTributeChoiceCard.upgrade();
             btAusterityChoiceCard.upgrade();
