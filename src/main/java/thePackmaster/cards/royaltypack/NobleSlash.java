@@ -1,5 +1,6 @@
 package thePackmaster.cards.royaltypack;
 
+import basemod.ReflectionHacks;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
@@ -29,8 +30,10 @@ public class NobleSlash extends AbstractPackmasterCard {
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         dmg(abstractMonster, AbstractGameAction.AttackEffect.SLASH_HEAVY);
         Wiz.atb(new DiscardAction(abstractPlayer, abstractPlayer, 1, true));
+        DrawReductionPower drawReductionPower = new DrawReductionPower(abstractPlayer, 1);
+        ReflectionHacks.setPrivate(drawReductionPower, DrawReductionPower.class, "justApplied", false);
         Wiz.atb(new ApplyPowerAction(abstractPlayer, abstractPlayer,
-                new DrawReductionPower(abstractPlayer, 1)));
+                drawReductionPower));
 
     }
 }
