@@ -1,0 +1,17 @@
+{
+  "${ModID}:StrikeDummyJrPower": {
+    "NAME": "打击小木偶。",
+    "DESCRIPTIONS": [
+      "你的打击牌额外造成 #b",
+      " 点伤害。"
+    ]
+  },
+  "${ModID}:StrikeOfGeniusPower": {
+    "NAME": "Strike of Genius",
+    "DESCRIPTIONS": [
+      "The next attack gains Block equal to unblocked damage dealt.",
+      "The next #b",
+      " attacks gain Block equal to unblocked damage dealt."
+    ]
+  }
+}

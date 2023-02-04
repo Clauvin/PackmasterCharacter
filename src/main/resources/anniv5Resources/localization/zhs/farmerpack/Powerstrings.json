@@ -1,0 +1,15 @@
+{
+  "${ModID}:OutToMarketPower": {
+    "NAME": "赶集",
+    "DESCRIPTIONS": [
+      "Deal #b",
+      " damage to ALL enemies whenever you play a card with a different type than the last. Last Played:", "攻击", "技能", "能力", "状态", "诅咒"
+    ]
+  },
+  "${ModID}:SupplyChainPower": {
+    "NAME": "供应链",
+    "DESCRIPTIONS": [      
+      "At the start of your turn, add #b", " Fertilizer", "s", " to your hand."
+    ]
+  }
+}

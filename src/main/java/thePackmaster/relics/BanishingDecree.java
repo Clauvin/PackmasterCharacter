@@ -2,6 +2,7 @@ package thePackmaster.relics;
 
 import basemod.BaseMod;
 import basemod.abstracts.CustomSavable;
+import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -20,6 +21,7 @@ import thePackmaster.util.Wiz;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static thePackmaster.SpireAnniversary5Mod.*;
 
@@ -63,20 +65,9 @@ public class BanishingDecree extends AbstractPackmasterRelic implements CustomSa
             tmp.addToTop(c);
         }
         AbstractDungeon.gridSelectScreen.open(tmp,
-                1, DESCRIPTIONS[1] + name + ".",
+                1, DESCRIPTIONS[1] + name + DESCRIPTIONS[7],
                 false, false, false, false);
     }
-
-
-    @Override
-    public void onUnequip() {
-        if (bannedPack != null) {
-            SpireAnniversary5Mod.currentPoolPacks.add(packsByID.get(bannedPack));
-            CardCrawlGame.dungeon.initializeCardPools();
-        }
-
-    }
-
 
     @Override
     public void update() {
@@ -100,7 +91,7 @@ public class BanishingDecree extends AbstractPackmasterRelic implements CustomSa
                     tmp.addToTop(c);
                 }
                 AbstractDungeon.gridSelectScreen.open(tmp,
-                        1, DESCRIPTIONS[5] + name + ".",
+                        1, DESCRIPTIONS[5] + name + DESCRIPTIONS[7],
                         false, false, false, false);
             } else {
                 cardSelected2 = true;
@@ -125,6 +116,10 @@ public class BanishingDecree extends AbstractPackmasterRelic implements CustomSa
                         for (AbstractCard c : reward.cards) {
                             relic.onPreviewObtainCard(c);
                         }
+                    }
+                    List<SpawnModificationCard> spawnModificationCards = reward.cards.stream().filter(c -> c instanceof SpawnModificationCard).map(c -> (SpawnModificationCard)c).collect(Collectors.toList());
+                    for (SpawnModificationCard c : spawnModificationCards) {
+                        c.onRewardListCreated(reward.cards);
                     }
                     AbstractDungeon.getCurrRoom().rewards.add(reward);
                 }
