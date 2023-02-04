@@ -48,7 +48,9 @@ public class ThrowSoulstonesAusterity extends AbstractPackmasterCard {
         } else {
             this.addToBot(new VFXAction(new BlizzardEffect(5, AbstractDungeon.getMonsters().shouldFlipVfx()), 0.5F));
         }
-        addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, new int[]{damage}, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
+        int[] damageMatrix = DamageInfo.createDamageMatrix(this.baseDamage, true);
+        DamageAllEnemiesAction dmgAll = new DamageAllEnemiesAction(AbstractDungeon.player, damageMatrix, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE);
+        addToBot(dmgAll);
     }
 
 
