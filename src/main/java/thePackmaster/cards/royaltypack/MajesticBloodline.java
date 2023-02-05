@@ -27,7 +27,7 @@ public class MajesticBloodline extends AbstractPackmasterCard {
     public final static int BASE_AMOUNT_OF_POWER_CHOICES = 3;
 
     public MajesticBloodline(){
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         exhaust = true;
         baseMagicNumber = magicNumber = BASE_AMOUNT_OF_POWER_CHOICES;
     }
