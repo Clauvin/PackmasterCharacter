@@ -58,7 +58,7 @@ public class MajesticBloodline extends AbstractPackmasterCard {
         for (int i = 0; i < currentPoolPacks.size(); i++){
             for (int j = 0; j < currentPoolPacks.get(i).cards.size(); j++){
                 AbstractCard card = currentPoolPacks.get(i).cards.get(j);
-                if (card.type == CardType.POWER){
+                if ((card.type == CardType.POWER) && (card.rarity != CardRarity.SPECIAL) && (!card.hasTag(CardTags.HEALING))){
                     currentPowers.add(card);
                 }
             }
