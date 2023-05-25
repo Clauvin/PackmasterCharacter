@@ -14,7 +14,7 @@ import thePackmaster.util.Wiz;
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
 @AutoAdd.Ignore
-public class BoundlessTalentAusterity extends AbstractPackmasterCard {
+public class BoundlessTalentAusterity extends AbstractRoyaltyCard {
 
     public final static String ID = makeID("BoundlessTalentAusterity");
     private int maxDrawHandSize;

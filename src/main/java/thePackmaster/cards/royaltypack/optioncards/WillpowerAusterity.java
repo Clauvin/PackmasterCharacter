@@ -13,7 +13,7 @@ import thePackmaster.util.Wiz;
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
 @AutoAdd.Ignore
-public class WillpowerAusterity extends AbstractPackmasterCard {
+public class WillpowerAusterity extends AbstractRoyaltyCard {
 
     public final static String ID = makeID("WillpowerAusterity");
 

@@ -16,7 +16,7 @@ import thePackmaster.util.Wiz;
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
 @AutoAdd.Ignore
-public class ThrowSoulstonesAusterity extends AbstractPackmasterCard {
+public class ThrowSoulstonesAusterity extends AbstractRoyaltyCard {
 
     public final static String ID = makeID("ThrowSoulstonesAusterity");
     public final static int DAMAGE = 5;

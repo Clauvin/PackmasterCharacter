@@ -14,7 +14,7 @@ import thePackmaster.util.Wiz;
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
 @AutoAdd.Ignore
-public class WillpowerTribute extends AbstractPackmasterCard {
+public class WillpowerTribute extends AbstractRoyaltyCard {
 
     public final static String ID = makeID("WillpowerTribute");
     public final static int TRIBUTE_GOLD_AMOUNT = 10;

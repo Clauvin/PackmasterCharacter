@@ -16,7 +16,7 @@ import javax.smartcardio.Card;
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
 @AutoAdd.Ignore
-public class NobleStrikeTribute extends AbstractPackmasterCard {
+public class NobleStrikeTribute extends AbstractRoyaltyCard {
 
     public final static String ID = makeID("NobleStrikeTribute");
     public final static int TRIBUTE_GOLD_AMOUNT = 5;

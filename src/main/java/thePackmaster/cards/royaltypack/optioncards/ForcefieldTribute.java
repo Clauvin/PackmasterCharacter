@@ -12,7 +12,7 @@ import thePackmaster.util.Wiz;
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
 @AutoAdd.Ignore
-public class ForcefieldTribute extends AbstractPackmasterCard {
+public class ForcefieldTribute extends AbstractRoyaltyCard {
 
     public final static String ID = makeID("ForcefieldTribute");
     public final static int TRIBUTE_GOLD_AMOUNT = 9;

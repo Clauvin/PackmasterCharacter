@@ -15,7 +15,7 @@ import thePackmaster.util.Wiz;
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
 @AutoAdd.Ignore
-public class BoundlessTalentTribute extends AbstractPackmasterCard {
+public class BoundlessTalentTribute extends AbstractRoyaltyCard {
 
     public final static String ID = makeID("BoundlessTalentTribute");
     public final static int TRIBUTE_GOLD_AMOUNT = 5;

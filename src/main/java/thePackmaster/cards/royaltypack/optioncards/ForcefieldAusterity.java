@@ -11,7 +11,7 @@ import thePackmaster.util.Wiz;
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
 @AutoAdd.Ignore
-public class ForcefieldAusterity extends AbstractPackmasterCard {
+public class ForcefieldAusterity extends AbstractRoyaltyCard {
 
     public final static String ID = makeID("ForcefieldAusterity");
     private int temporaryHPGained;

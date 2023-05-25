@@ -13,7 +13,7 @@ import thePackmaster.util.Wiz;
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
 @AutoAdd.Ignore
-public class NobleStrikeAusterity extends AbstractPackmasterCard {
+public class NobleStrikeAusterity extends AbstractRoyaltyCard {
 
     public final static String ID = makeID("NobleStrikeAusterity");
     public final static int GOLD_GAINED = 5;
