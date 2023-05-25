@@ -1,8 +1,8 @@
 {
   "${ModID}:AmalgamateWaters": {
     "NAME": "众水汇集",
-    "DESCRIPTION": "抽1张 ${ModID}:固在 牌。 NL 触发任意张手牌的 ${ModID}:固在 效果，然后将其 ${ModID}:增变化 。",
-    "UPGRADE_DESCRIPTION": "抽 !M! 张 ${ModID}:固在 牌。 NL 触发任意张手牌的 ${ModID}:固在 效果，然后将其 ${ModID}:增变化 。"
+    "DESCRIPTION": "${ModID}:取 1张 ${ModID}:固在 牌。 NL 选择令本牌获得任意手牌的 ${ModID}:固在 效果，然后将其 ${ModID}:增变化 。",
+    "UPGRADE_DESCRIPTION": "${ModID}:取 !M! 张 ${ModID}:固在 牌。 NL 选择令本牌获得任意手牌的 ${ModID}:固在 效果，然后将其 ${ModID}:增变化 。"
   },
   "${ModID}:CrystalLattice": {
     "NAME": "水晶树架",
@@ -13,7 +13,7 @@
     "DESCRIPTION": "${ModID}:增变化 时， NL 获得 !M! 点 力量 。"
   },
   "${ModID}:Drench": {
-    "NAME": "湿透",
+    "NAME": "浸透",
     "DESCRIPTION": "${ModID}:固在 ： 获得 !B! 点 格挡 。 NL ${ModID}:固在 ： 造成 !D! 点伤害。"
   },
   "${ModID}:FrozenCapsule": {
@@ -23,8 +23,8 @@
   },
   "${ModID}:GhostlyMist": {
     "NAME": "鬼雾",
-    "DESCRIPTION": "${ModID}:固在 ： 免费打出。 NL ${ModID}:固在 ： ${ModID}:增变化 本牌。 NL ${ModID}:固在 ：将本牌洗入抽牌堆。",
-    "UPGRADE_DESCRIPTION": "固有 。 NL ${ModID}:固在 ： 免费打出。 NL ${ModID}:固在 ： ${ModID}:增变化 本牌。 NL ${ModID}:固在 ：将本牌洗入抽牌堆。"
+    "DESCRIPTION": "${ModID}:固在 ： 免费打出。 NL ${ModID}:固在 ： ${ModID}:增变化 本牌。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL ${ModID}:固在 ： 免费打出。 NL ${ModID}:固在 ： ${ModID}:增变化 本牌。 "
   },
   "${ModID}:GlacialSynthesis": {
     "NAME": "人工冰川",
@@ -46,7 +46,7 @@
   },
   "${ModID}:AbstractExtraEffectModifier": {
     "EXTENDED_DESCRIPTION": [
-      "${ModID}:固在 ：",
+      "${ModID}:固在 ： NL ",
       " ",
       " 次。",
       "。"
@@ -73,7 +73,7 @@
   "${ModID}:GainBlockEffect": {
     "EXTENDED_DESCRIPTION": [
       "获得 ",
-      " 点 格挡 。"
+      " 点 格挡 "
     ]
   },
   "${ModID}:ReboundSelfEffect": {
@@ -83,7 +83,7 @@
   },
   "${ModID}:TransmuteSelfEffect": {
     "EXTENDED_DESCRIPTION": [
-      "${ModID}:增变化 本牌。"
+      " ${ModID}:增变化 本牌。"
     ]
   }
 }

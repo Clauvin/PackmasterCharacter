@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 import thePackmaster.cards.dimensiongateabstracts.AbstractDimensionalCardGrift;
-import thePackmaster.onGenerateCardMidcombatInterface;
+import thePackmaster.util.creativitypack.onGenerateCardMidcombatInterface;
 import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
@@ -16,7 +16,7 @@ import static thePackmaster.SpireAnniversary5Mod.makeID;
 public class Crusher extends AbstractDimensionalCardGrift implements onGenerateCardMidcombatInterface {
     public final static String ID = makeID("Crusher");
 
-    private static final int COST = 6;
+    private static final int COST = 5;
     public Crusher() {
         super(ID, COST, CardRarity.UNCOMMON, CardType.ATTACK, CardTarget.ENEMY);
         baseDamage = 20;
@@ -41,7 +41,7 @@ public class Crusher extends AbstractDimensionalCardGrift implements onGenerateC
         Wiz.atb(new AbstractGameAction() {
             @Override
             public void update() {
-                Crusher.this.modifyCostForCombat(COST-Wiz.getLogicalCardCost(Crusher.this));
+                Crusher.this.modifyCostForCombat(COST-Crusher.this.cost);
                 Crusher.this.isCostModified=false;
                 isDone = true;
             }

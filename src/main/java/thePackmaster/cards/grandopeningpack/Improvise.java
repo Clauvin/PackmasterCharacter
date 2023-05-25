@@ -28,13 +28,27 @@ public class Improvise extends AbstractGrandOpeningCard {
         int cardsDiscarded = 0;
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.isInnate && c != this) {
-                addToBot((AbstractGameAction) new DiscardSpecificCardAction(c));
+                addToBot(new DiscardSpecificCardAction(c));
                 cardsDiscarded++;
             }
         }
         addToBot(new GainBlockAction(AbstractDungeon.player, this.block));
         if(cardsDiscarded > 0)
             addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new PhantasmalPower(abstractPlayer, 1), 1));
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        boolean holdingInnate = false;
+        for (AbstractCard c : AbstractDungeon.player.hand.group) {
+            if (c.isInnate && c != this) {
+                holdingInnate = true;
+                break;
+            }
+        }
+        if (holdingInnate) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        } else this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 
     @Override

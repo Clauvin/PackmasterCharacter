@@ -27,7 +27,7 @@
   },
   "${ModID}:ForceBolt": {
     "NAME": "力之矢",
-    "DESCRIPTION": "*魔法 。 NL 造成 !D! 点伤害。 NL 本回合魔法牌伤害增加 !M! 点。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 易伤 。"
   },
   "${ModID}:Enigmancy": {
     "NAME": "高深",
@@ -35,7 +35,7 @@
   },
   "${ModID}:Recurrence": {
     "NAME": "重现",
-    "DESCRIPTION": "选择将一张手牌的复制品加入抽牌堆。 NL 消耗 。"
+    "DESCRIPTION": "将所有手牌的复制品加入抽牌堆。 NL 消耗 。"
   },
   "${ModID}:DivineMight": {
     "NAME": "神圣之力",

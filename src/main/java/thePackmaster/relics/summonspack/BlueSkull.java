@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.FocusPower;
 import thePackmaster.SpireAnniversary5Mod;
-import thePackmaster.packs.SummonsPack;
+import thePackmaster.packs.*;
 import thePackmaster.relics.AbstractPackmasterRelic;
 import thePackmaster.util.Wiz;
 
@@ -19,7 +19,7 @@ public class BlueSkull extends AbstractPackmasterRelic {
     private boolean isActive = false;
 
     public BlueSkull() {
-        super(ID, RelicTier.COMMON, LandingSound.FLAT, SummonsPack.ID);
+        super(ID, RelicTier.COMMON, LandingSound.FLAT, SummonsPack.ID, OrbPack.ID, DefectPack.ID, SpheresPack.ID, FrostPack.ID);
     }
 
     public void atBattleStart() {

@@ -5,7 +5,7 @@
   },
   "${ModID}:FlameBlast": {
     "NAME": "火焰冲击",
-    "DESCRIPTION": "给予 !M! 层 ${ModID}:燃烧 。 NL 若目标已被 易伤 ，再给予一次。 NL 给予 !${ModID}:m2! 层 易伤。"
+    "DESCRIPTION": "给予 !M! 层 ${ModID}:燃烧 。 NL 若目标已被 易伤 ， NL 再给予一次。 NL 给予 !${ModID}:m2! 层 易伤 。"
   },
   "${ModID}:IceWall": {
     "NAME": "冰墙",
@@ -13,7 +13,7 @@
   },
   "${ModID}:FreezeAndBurn": {
     "NAME": "冻燃",
-    "DESCRIPTION": "所有敌人本回合失去 !M! 点 力量。 NL 下回合,对所有敌人造成 !D! 点伤害。 NL 消耗 。"
+    "DESCRIPTION": "所有敌人本回合失去 !M! 点 力量。 NL 下回合， NL 造成 !D! 点群体伤害。 NL 消耗 。"
   },
   "${ModID}:Frostfire": {
     "NAME": "霜火",
@@ -21,7 +21,7 @@
   },
   "${ModID}:FieryMantle": {
     "NAME": "火焰覆罩",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 本回合被攻击时， 给予对方 !M! 层 ${ModID}:燃烧 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 本回合被攻击时， NL 给予对方 !M! 层 ${ModID}:燃烧 。"
   },
   "${ModID}:SnowMelt": {
     "NAME": "雪融",
@@ -30,7 +30,7 @@
   },
   "${ModID}:Pyromastery": {
     "NAME": "火焰驾驭",
-    "DESCRIPTION": "给予 ${ModID}:燃烧 时，额外给予 !M! 层 。 。"
+    "DESCRIPTION": "给予 ${ModID}:燃烧 时， NL 额外给予 !M! 层 。"
   },
   "${ModID}:ReadTheFlames": {
     "NAME": "火焰讯息",

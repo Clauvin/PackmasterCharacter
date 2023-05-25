@@ -1,6 +1,6 @@
 package thePackmaster.hats;
 
-import basemod.ModLabeledToggleButton;
+import basemod.patches.com.megacrit.cardcrawl.screens.options.DropdownMenu.DropdownColoring;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -14,13 +14,11 @@ import com.megacrit.cardcrawl.screens.options.DropdownMenu;
 import thePackmaster.SpireAnniversary5Mod;
 import thePackmaster.ThePackmaster;
 import thePackmaster.hats.specialhats.AlignmentHat;
+import thePackmaster.hats.specialhats.InstantDeathHat;
 import thePackmaster.hats.specialhats.PsychicHat;
 import thePackmaster.hats.specialhats.SpecialHat;
-import thePackmaster.packs.AbstractCardPack;
-import thePackmaster.packs.AlignmentPack;
-import thePackmaster.packs.CoreSetPack;
-import thePackmaster.packs.PsychicPack;
-import thePackmaster.patches.DropdownColorsPatch;
+import thePackmaster.packs.*;
+import thePackmaster.ui.FixedModLabeledToggleButton.FixedModLabeledToggleButton;
 import thePackmaster.util.Wiz;
 
 import java.io.IOException;
@@ -47,23 +45,25 @@ public class HatMenu {
     static {
         specialHats.put(AlignmentPack.ID, new AlignmentHat());
         specialHats.put(PsychicPack.ID, new PsychicHat());
+        specialHats.put(InstantDeathPack.ID, new InstantDeathHat());
     }
 
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(SpireAnniversary5Mod.makeID("HatMenu")).TEXT;
     private static final TextureRegion MENU_BG = new TextureRegion(ImageMaster.loadImage("img/ModPanelBg.png"));
 
     //positions
-    private static final float BG_X_SCALE = Settings.scale * 0.275f;
-    private static final float BG_Y_SCALE = Settings.scale * 0.8f;
-    private static final float BG_X = 525f * Settings.scale;
-    private static final float BG_Y = Settings.HEIGHT - 40f * Settings.scale - MENU_BG.getRegionHeight() * BG_Y_SCALE;
+    private static final float BG_X_SCALE = Settings.xScale * 0.275f;
+    private static final float BG_Y_SCALE = Settings.yScale * 0.8f;
+    private static final float BG_X = 525f * Settings.xScale;
+    private static final float BG_Y = Settings.HEIGHT - 40f * Settings.yScale - MENU_BG.getRegionHeight() * BG_Y_SCALE;
     private static final float FLAVOR_X = BG_X + MENU_BG.getRegionWidth() * BG_X_SCALE * 0.5f;
-    private static final float DROPDOWN_X = 586f * Settings.scale;
-    private static final float DROPDOWN_Y = Settings.HEIGHT - 160f * Settings.scale;
-    private static final float PREVIEW_X = BG_X + (210 * Settings.scale);
-    private static final float PREVIEW_Y = BG_Y + (215 * Settings.scale);
-    private static final float CHECKBOX_X = BG_X + (100 * Settings.scale);
-    private static final float CHECKBOX_Y = BG_Y + (45 * Settings.scale);
+    private static final float DROPDOWN_X = 586f * Settings.xScale;
+    private static final float DROPDOWN_Y = Settings.HEIGHT - 160f * Settings.yScale;
+    private static final float PREVIEW_X = BG_X + (210 * Settings.xScale);
+    private static final float PREVIEW_Y = BG_Y + (215 * Settings.yScale);
+    // We pass these values to the button class, which does its own multiplication by xScale/yScale
+    private static final float CHECKBOX_X = BG_X / Settings.xScale + 100;
+    private static final float CHECKBOX_Y = BG_Y / Settings.yScale + 45;
 
     public static AbstractPlayer dummy;
 
@@ -71,7 +71,7 @@ public class HatMenu {
 
     public static int currentHatIndex;
 
-    private static final ModLabeledToggleButton rainbowButton = makeRainbowButton();
+    private static final FixedModLabeledToggleButton rainbowButton = makeRainbowButton();
     private static boolean showRainbowButton = false;
 
     private static final Color LOCKED_COLOR = Color.GRAY.cpy().mul(1f,1f,1f,0.95f);
@@ -83,9 +83,9 @@ public class HatMenu {
         refreshHatDropdown();
     }
 
-    private static ModLabeledToggleButton makeRainbowButton() {
+    private static FixedModLabeledToggleButton makeRainbowButton() {
         SpireAnniversary5Mod.isHatRainbow = SpireAnniversary5Mod.wasRainbowLastEnabled();
-        return new ModLabeledToggleButton(TEXT[11], CHECKBOX_X, CHECKBOX_Y, Color.WHITE, FontHelper.tipBodyFont, SpireAnniversary5Mod.isHatRainbow , null, (label) -> {
+        return new FixedModLabeledToggleButton(TEXT[11], CHECKBOX_X, CHECKBOX_Y, Color.WHITE, FontHelper.tipBodyFont, SpireAnniversary5Mod.isHatRainbow , null, (label) -> {
         },
                 (button) -> {
                     try {
@@ -124,7 +124,7 @@ public class HatMenu {
 
         dropdown = new DropdownMenu(((dropdownMenu, index, s) -> setCurrentHat(index, s)),
                 optionNames, FontHelper.tipBodyFont, Settings.CREAM_COLOR);
-        DropdownColorsPatch.DropdownRowToColor.function.set(dropdown, HatMenu::getColorFromIndex);
+        DropdownColoring.RowToColor.function.set(dropdown, HatMenu::getColorFromIndex);
 
         for (int i = 0; i < hats.size(); i++) {
             hatsToIndexes.put(hats.get(i), i);
@@ -136,6 +136,8 @@ public class HatMenu {
             if (currentlyUnlockedRainbows.contains(lastPickedId)) {
                 showRainbowButton = true;
             } else if ("Base".equals(lastPickedId) && currentlyUnlockedRainbows.contains(CoreSetPack.ID)) {
+                showRainbowButton = true;
+            } else if ("Random".equals(lastPickedId) && !currentlyUnlockedRainbows.isEmpty()) {
                 showRainbowButton = true;
             } else {
                 showRainbowButton = false;
@@ -206,9 +208,10 @@ public class HatMenu {
     }
 
     public static void randomizeHat() {
-        currentHat = Wiz.getRandomItem(currentlyUnlockedHats);
-        if (!currentlyUnlockedRainbows.contains(currentHat)) {
-            SpireAnniversary5Mod.isHatRainbow = false;
+        if (rainbowButton.toggle.enabled) {
+            currentHat = Wiz.getRandomItem(currentlyUnlockedRainbows);
+        } else {
+            currentHat = Wiz.getRandomItem(currentlyUnlockedHats);
         }
         Hats.addHat(true, currentHat);
         SpireAnniversary5Mod.logger.info("Randomizer chose hat: " + currentHat);
@@ -261,12 +264,16 @@ public class HatMenu {
             currentHat = null;
             Hats.addHat(false, "Locked");
             flavorText = TEXT[2] + SpireAnniversary5Mod.packsByID.get(hats.get(index)).name + TEXT[3];
+            showRainbowButton = false;
+            if (rainbowButton.toggle.enabled) rainbowButton.toggle.toggle();
         } else if (name.contains(TEXT[6])) {
             invalidHatSelected = true;
             currentHat = null;
             //SpireAnniversary5Mod.logger.info("Selected a missing hat.");
             Hats.removeHat(false);
             flavorText = SpireAnniversary5Mod.packsByID.get(hats.get(index)).name + TEXT[7];
+            showRainbowButton = false;
+            if (rainbowButton.toggle.enabled) rainbowButton.toggle.toggle();
         } else {
             invalidHatSelected = false;
             //SpireAnniversary5Mod.logger.info("Add new hat at index " + index);
@@ -326,7 +333,7 @@ public class HatMenu {
     public void render(SpriteBatch sb) {
         sb.draw(MENU_BG, BG_X, BG_Y, 0f, 0f, MENU_BG.getRegionWidth(), MENU_BG.getRegionHeight(), BG_X_SCALE, BG_Y_SCALE, 0f);
 
-        FontHelper.renderWrappedText(sb, FontHelper.panelNameFont, flavorText, FLAVOR_X, DROPDOWN_Y - (343 * Settings.scale), 330 * Settings.scale, Color.YELLOW.cpy(), 0.8F);
+        FontHelper.renderWrappedText(sb, FontHelper.panelNameFont, flavorText, FLAVOR_X, DROPDOWN_Y - (343 * Settings.yScale), 330 * Settings.xScale, Color.YELLOW.cpy(), 0.8F);
 
         getDummy().renderPlayerImage(sb);
 

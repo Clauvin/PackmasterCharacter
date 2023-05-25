@@ -5,14 +5,14 @@
   },
   "${ModID}:Deconstruct": {
     "NAME": "解构",
-    "DESCRIPTION": "给予所有敌人 !M! 层 ${ModID}:扭曲 。 NL 消耗 。"
+    "DESCRIPTION": "给予 !M! 层群体 ${ModID}:扭曲 。 NL 消耗 。"
   },
   "${ModID}:Darken": {
     "NAME": "变暗",
     "DESCRIPTION": "给予 !M! 层 ${ModID}:扭曲 。 NL 若目标有其他负面效果，再给予 !${ModID}:m2! 层。"
   },
   "${ModID}:BurningAct": {
-    "NAME": "燃烧举止",
+    "NAME": "燃烧表演",
     "DESCRIPTION": "抽 !M! 张牌。 NL 随机 消耗 其中2张。",
     "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 消耗 其中2张。"
   },
@@ -37,11 +37,11 @@
   },
   "${ModID}:Static": {
     "NAME": "频噪声",
-    "DESCRIPTION": "随机造成 !D! 点伤害 !M! 次。 给予未被格挡伤害 层 ${ModID}:扭曲 。"
+    "DESCRIPTION": "随机造成 !D! 点伤害 !M! 次。 NL 给予 ${ModID}:突破 量层 ${ModID}:扭曲 。"
   },
   "${ModID}:CursedCircle": {
     "NAME": "诅咒之圈",
-    "DESCRIPTION": "所有单位本回合失去你当前手牌数量点 力量 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "所有单位本回合失去你当前手牌数量点 力量 。"
+    "DESCRIPTION": "所有单位临时失去你当前手牌数量点 力量 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "所有单位临时失去你当前手牌数量点 力量 。"
   }
 }

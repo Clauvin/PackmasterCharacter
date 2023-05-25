@@ -1,7 +1,8 @@
 {
   "${ModID}:ModalChoice": {
     "TEXT": [
-      "Choose a Pack."
+      "Choose a Pack.",
+      "Choose."
     ]
   },
   "${ModID}:AbstractPackPreviewCard": {
@@ -82,20 +83,36 @@
       "Watcher Veil"
     ]
   },
+  "${ModID}:BulwarkPack": {
+    "TEXT": [
+      "Bulwark",
+      "The greatest defensive tools of the Spire, together for the first time in one place.",
+      "modargo"
+    ]
+  },
+  "${ModID}:BulwarkPackHat": {
+    "TEXT": [
+      "Comprehensive protection.",
+      "The Headfort"
+    ]
+  },
   "${ModID}:PackMainMenuUI": {
     "TEXT": [
       "Custom Draft Mode",
       "Turn this on to choose how your Packs are determined.",
       "Random",
-      "Choice of 3",
+      "Choice of ",
       "Pack Filtering Menu",
-      "Hat Menu"
+      "Hat Menu",
+      "",
+      "None"
     ]
   },
   "${ModID}:PackSetup": {
     "TEXT": [
       "Draft a Pack!",
-      "Current Packs"
+      "Current Packs",
+      "Show Pack ratings"
     ]
   },
   "${ModID}:CurrentRunCardsTopPanelItem": {
@@ -118,6 +135,11 @@
   "${ModID}:Compendium": {
     "TEXT": [
       "By Packs"
+    ]
+  },
+  "${ModID}:RunHistory": {
+    "TEXT": [
+      "Packs:"
     ]
   },
   "${ModID}:CardTypeStrings": {
@@ -148,13 +170,58 @@
       "Adds a new character: The Packmaster.",
       "ALL PACKS MODE. Ignores Custom Draft, Doesn't Unlock Hats",
       "One Frame For All. All Pack cards have normal Packmaster frames (Requires Restart).",
-      "Share Content. Some Relics/ Potions can appear on other characters (Requires Restart)."
+      "Share Content. Some Relics/ Potions can appear on other characters (Requires Restart).",
+      "Allow selecting None multiple times in custom draft mode (may cause crashes/freezes for some pack choices)"
     ]
   },
   "${ModID}:PMBoosterBoxCardReward": {
     "TEXT": [
       "Add a booster box card",
       "Choose a booster box card"
+    ]
+  },
+  "${ModID}:SingleCardReward": {
+    "TEXT": [
+      "[Card] ",
+      "Tip: Right-click for detailed card view!"
+    ]
+  },
+  "${ModID}:PackSummaryDisplay": {
+    "TEXT": [
+      "Pack Summary",
+      "Offense: {0}",
+      "Defense: {0}",
+      "Support: {0}",
+      "Frontload: {0}",
+      "Scaling: {0}",
+      "Tags: {0}",
+      ", "
+    ],
+    "TEXT_DICT": {
+      "None": "None",
+      "Strength": "Strength",
+      "Exhaust": "Exhaust",
+      "Orbs": "Orbs",
+      "Stances": "Stances",
+      "Discard": "Discard",
+      "Debuffs": "Debuffs",
+      "Attacks": "Attacks",
+      "Tokens": "Tokens",
+      "Powers": "Powers"
+    }
+  },
+  "${ModID}:MerchantSpeech": {
+    "TEXT": [
+      "@Nice@ @hat@",
+      "Better deals here than at the black market",
+      "That's a ~big~ backpack",
+      "Seen a lot of you recently"
+    ]
+  },
+  "${ModID}:MerchantEndingSpeech": {
+    "TEXT": [
+      "What do you keep in there anyway?",
+      "One day they will make the final pack."
     ]
   }
 }

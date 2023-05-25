@@ -13,19 +13,19 @@
   },
   "${ModID}:Bzzzzz": {
     "NAME": "嗡嗡嗡嗡嗡嗡嗡",
-    "DESCRIPTION": "给予 !M! 层 虚弱 。 NL 抽 !M! 张牌。"
+    "DESCRIPTION": "给予1层 易伤 。 NL 给予1层 虚弱 。 NL 抽 !M! 张牌。"
   },
   "${ModID}:BugOut": {
     "NAME": "生虫",
-    "DESCRIPTION": "${ModID}:滋生 。 NL 每有一枚 [bugIcon] ，获得1点 力量 与 敏捷 。"
+    "DESCRIPTION": "${ModID}:滋生 。 NL 每有一枚 [bugIcon] ， NL 获得1点 力量 与 敏捷 。"
   },
   "${ModID}:ScarabShield": {
     "NAME": "金龟子壳",
-    "DESCRIPTION": "${ModID}:滋生 。 NL 获得 !B! 点 格挡 。 NL 每有一枚 [bugIcon] ， NL 获得1层 人工制品 。"
+    "DESCRIPTION": "${ModID}:滋生 。 NL 获得 !B! 点 格挡 。 NL 抽一张牌。 NL 本牌 *滋生 时， NL 获得1层 人工制品 。"
   },
   "${ModID}:Entomology": {
     "NAME": "昆虫学",
-    "DESCRIPTION": "${ModID}:滋生 。 NL 造成 !D! 点伤害。 NL 若本牌有 [bugIcon] ， NL 全部移除来抽一张牌并获得 [E] 。"
+    "DESCRIPTION": "${ModID}:滋生 。 NL 造成 !D! 点伤害。 NL 若本牌有 [bugIcon] ， NL 失去1点来抽一张牌并获得 [E] 。"
   },
   "${ModID}:Compoundeyes": {
     "NAME": "复眼",

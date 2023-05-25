@@ -5,10 +5,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePackmaster.cards.dimensiongateabstracts.AbstractDimensionalCardGrift;
-import thePackmaster.onGenerateCardMidcombatInterface;
+import thePackmaster.util.creativitypack.onGenerateCardMidcombatInterface;
 import thePackmaster.util.Wiz;
 
-import static thePackmaster.SpireAnniversary5Mod.MAGIC;
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
 public class Haymaker extends AbstractDimensionalCardGrift implements onGenerateCardMidcombatInterface {
@@ -18,7 +17,7 @@ public class Haymaker extends AbstractDimensionalCardGrift implements onGenerate
     public Haymaker() {
         super(ID, 2, CardRarity.UNCOMMON, CardType.ATTACK, CardTarget.ALL_ENEMY);
         baseDamage = 10;
-        baseMagicNumber = magicNumber = 2;
+        baseMagicNumber = magicNumber = 3;
         isMultiDamage = true;
 
     }
@@ -48,6 +47,7 @@ public class Haymaker extends AbstractDimensionalCardGrift implements onGenerate
     }
 
     public void upp() {
+        upgradeDamage(2);
         upgradeMagicNumber(1);
     }
 }

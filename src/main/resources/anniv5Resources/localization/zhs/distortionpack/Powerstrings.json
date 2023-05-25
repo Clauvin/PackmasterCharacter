@@ -4,7 +4,7 @@
     "DESCRIPTIONS": [
       "每当一张牌被 #y消耗 时，你失去 #b",
       "每当一张牌被 #y消耗 时，该单位失去 #b",
-      " 点生命。"
+      " 点生命，同时失去 #b1 层 #y扭曲 。"
     ]
   },
   "${ModID}:RuePower": {
@@ -16,9 +16,9 @@
     ]
   },
   "${ModID}:DeteriorationPower": {
-    "NAME": "Deterioration",
+    "NAME": "恶化",
     "DESCRIPTIONS": [
-      "回合结束时，随机 #y消耗 弃牌堆一张牌并获得 #b",
+      "你的回合结束时，随机 #y消耗 弃牌堆一张牌并获得 #b",
       " 点 #y格挡 。"
     ]
   }

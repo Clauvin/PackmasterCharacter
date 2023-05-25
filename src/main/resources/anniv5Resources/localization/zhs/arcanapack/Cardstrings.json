@@ -9,20 +9,20 @@
   },
   "${ModID}:TheHermit": {
     "NAME": "隐者",
-    "DESCRIPTION": "丢弃一张牌， NL 抽其耗能张牌。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "丢弃一张牌， NL 抽其耗能张牌。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 丢弃一张牌， NL 抽其耗能张牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 丢弃一张牌， NL 抽其耗能张牌。"
   },
   "${ModID}:TheHangedMan": {
     "NAME": "倒吊者",
-    "DESCRIPTION": "本回合每当你抽一张牌，所有敌人失去 !M! 点生命。"
+    "DESCRIPTION": "本回合每再抽一张牌，所有敌人失去 !M! 点生命。"
   },
   "${ModID}:TheTower": {
     "NAME": "塔",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 若杀死目标， NL 再打出一次。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若击杀目标， NL 再打出一次。"
   },
   "${ModID}:Death": {
     "NAME": "死神",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 若之后目标生命降至10%以下，将其处决。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 造成后若目标生命降至10%以下，将其处决。"
   },
   "${ModID}:Temperance": {
     "NAME": "节制",
@@ -35,7 +35,7 @@
   },
   "${ModID}:TheSun": {
     "NAME": "太阳",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 给予当前生命最高的敌人 !M! 层 易伤 。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 点群体伤害。 NL 给予当前生命最高的敌人 !M! 层 易伤 。 NL 消耗 。"
   },
   "${ModID}:TheChariot": {
     "NAME": "战车",
