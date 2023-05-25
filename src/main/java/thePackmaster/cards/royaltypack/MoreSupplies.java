@@ -12,7 +12,7 @@ import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
-public class MoreSupplies extends AbstractPackmasterCard {
+public class MoreSupplies extends AbstractRoyaltyCard {
 
     public final static String ID = makeID("MoreSupplies");
 
@@ -28,8 +28,8 @@ public class MoreSupplies extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        AbstractPackmasterCard moreSuppliesTributeChoiceCard = new MoreSuppliesTribute();
-        AbstractPackmasterCard moreSuppliesAusterityChoiceCard = new MoreSuppliesAusterity();
+        AbstractRoyaltyCard moreSuppliesTributeChoiceCard = new MoreSuppliesTribute();
+        AbstractRoyaltyCard moreSuppliesAusterityChoiceCard = new MoreSuppliesAusterity();
         if (this.upgraded){
             moreSuppliesTributeChoiceCard.upgrade();
             moreSuppliesAusterityChoiceCard.upgrade();

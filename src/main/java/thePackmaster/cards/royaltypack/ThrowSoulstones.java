@@ -12,7 +12,7 @@ import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
-public class ThrowSoulstones extends AbstractPackmasterCard {
+public class ThrowSoulstones extends AbstractRoyaltyCard {
 
     public final static String ID = makeID("ThrowSoulstones");
     public final static int TRIBUTE_DAMAGE = 15;
@@ -32,8 +32,8 @@ public class ThrowSoulstones extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        AbstractPackmasterCard tsTributeChoiceCard = new ThrowSoulstonesTribute(this, damage);
-        AbstractPackmasterCard tsAusterityChoiceCard = new ThrowSoulstonesAusterity(secondDamage);
+        AbstractRoyaltyCard tsTributeChoiceCard = new ThrowSoulstonesTribute(this, damage);
+        AbstractRoyaltyCard tsAusterityChoiceCard = new ThrowSoulstonesAusterity(secondDamage);
         for (int i = 0; i < this.timesUpgraded; i++){
             tsTributeChoiceCard.upgrade();
             tsAusterityChoiceCard.upgrade();

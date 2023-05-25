@@ -13,7 +13,7 @@ import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
-public class BoundlessTalent extends AbstractPackmasterCard {
+public class BoundlessTalent extends AbstractRoyaltyCard {
 
     public final static String ID = makeID("BoundlessTalent");
     private static final int EXHAUSTIVE = 2;
@@ -35,8 +35,8 @@ public class BoundlessTalent extends AbstractPackmasterCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        AbstractPackmasterCard btTributeChoiceCard = new BoundlessTalentTribute();
-        AbstractPackmasterCard btAusterityChoiceCard = new BoundlessTalentAusterity(magicNumber);
+        AbstractRoyaltyCard btTributeChoiceCard = new BoundlessTalentTribute();
+        AbstractRoyaltyCard btAusterityChoiceCard = new BoundlessTalentAusterity(magicNumber);
         for (int i = 0; i < this.timesUpgraded; i++){
             btTributeChoiceCard.upgrade();
             btAusterityChoiceCard.upgrade();

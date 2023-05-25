@@ -11,7 +11,7 @@ import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
-public class NobleForm extends AbstractPackmasterCard {
+public class NobleForm extends AbstractRoyaltyCard {
 
     public final static String ID = makeID("NobleForm");
 

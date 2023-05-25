@@ -9,7 +9,7 @@ import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
-public class WindShield extends AbstractPackmasterCard {
+public class WindShield extends AbstractRoyaltyCard {
     public final static String ID = makeID("WindShield");
     public final static int BLOCK_GIVEN_BY_DISCARD = 4;
 

@@ -21,7 +21,7 @@ import java.util.Iterator;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
-public class MajesticBloodline extends AbstractPackmasterCard {
+public class MajesticBloodline extends AbstractRoyaltyCard {
 
     public final static String ID = makeID("MajesticBloodline");
     public final static int BASE_AMOUNT_OF_POWER_CHOICES = 3;
@@ -40,8 +40,8 @@ public class MajesticBloodline extends AbstractPackmasterCard {
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         Wiz.atb(new MajesticBloodlineAction(createPowers(magicNumber)));
-        AbstractPackmasterCard mbTributeChoiceCard = new MajesticBloodlineTribute(this);
-        AbstractPackmasterCard mbAusterityChoiceCard = new MajesticBloodlineAusterity();
+        AbstractRoyaltyCard mbTributeChoiceCard = new MajesticBloodlineTribute(this);
+        AbstractRoyaltyCard mbAusterityChoiceCard = new MajesticBloodlineAusterity();
 
         Wiz.atb(new TributeOrAusterityAction(mbTributeChoiceCard, mbAusterityChoiceCard));
     }

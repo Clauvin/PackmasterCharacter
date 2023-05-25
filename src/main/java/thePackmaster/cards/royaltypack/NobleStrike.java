@@ -15,7 +15,7 @@ import javax.swing.*;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
-public class NobleStrike extends AbstractPackmasterCard {
+public class NobleStrike extends AbstractRoyaltyCard {
 
     public final static String ID = makeID("NobleStrike");
 
@@ -35,8 +35,8 @@ public class NobleStrike extends AbstractPackmasterCard {
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         dmg(abstractMonster, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
-        AbstractPackmasterCard nsTributeChoiceCard = new NobleStrikeTribute();
-        AbstractPackmasterCard nsAusterityChoiceCard = new NobleStrikeAusterity();
+        AbstractRoyaltyCard nsTributeChoiceCard = new NobleStrikeTribute();
+        AbstractRoyaltyCard nsAusterityChoiceCard = new NobleStrikeAusterity();
         for (int i = 0; i < magicNumber - 1; i++){
             nsTributeChoiceCard.upgrade();
             nsAusterityChoiceCard.upgrade();

@@ -13,7 +13,7 @@ import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;
 
-public class Forcefield extends AbstractPackmasterCard {
+public class Forcefield extends AbstractRoyaltyCard {
 
     public final static String ID = makeID("Forcefield");
     public final static int TRIBUTE_MAXHP = 15;
@@ -35,8 +35,8 @@ public class Forcefield extends AbstractPackmasterCard {
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         Wiz.atb(new DiscardAction(abstractPlayer, abstractPlayer, 1, true));
 
-        AbstractPackmasterCard forcefieldTributeChoiceCard = new ForcefieldTribute(secondMagic);
-        AbstractPackmasterCard forcefieldAusterityChoiceCard = new ForcefieldAusterity(magicNumber);
+        AbstractRoyaltyCard forcefieldTributeChoiceCard = new ForcefieldTribute(secondMagic);
+        AbstractRoyaltyCard forcefieldAusterityChoiceCard = new ForcefieldAusterity(magicNumber);
 
         Wiz.atb(new TributeOrAusterityAction(forcefieldTributeChoiceCard, forcefieldAusterityChoiceCard));
     }
