@@ -1,6 +1,8 @@
 package thePackmaster.cards.royaltypack;
 
-public class AbstractRoyaltyCard extends AbstractPackmasterCard {
+import thePackmaster.cards.AbstractPackmasterCard;
+
+public abstract class AbstractRoyaltyCard extends AbstractPackmasterCard {
 
     public AbstractRoyaltyCard(String cardID, int cost, CardType type, CardRarity rarity, CardTarget target)
     {

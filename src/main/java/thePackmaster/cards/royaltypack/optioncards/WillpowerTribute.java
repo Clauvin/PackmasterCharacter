@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.BufferPower;
 import thePackmaster.actions.royaltypack.PayTributeAction;
-import thePackmaster.cards.AbstractPackmasterCard;
+import thePackmaster.cards.royaltypack.AbstractRoyaltyCard;
 import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;

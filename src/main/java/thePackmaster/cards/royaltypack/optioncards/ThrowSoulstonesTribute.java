@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.vfx.combat.BlizzardEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thePackmaster.actions.royaltypack.PayTributeAction;
-import thePackmaster.cards.AbstractPackmasterCard;
+import thePackmaster.cards.royaltypack.AbstractRoyaltyCard;
 import thePackmaster.util.Wiz;
 
 import static thePackmaster.SpireAnniversary5Mod.makeID;

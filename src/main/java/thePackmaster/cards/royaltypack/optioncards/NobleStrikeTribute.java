@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePackmaster.actions.royaltypack.DrawSpecificCardTypeAction;
 import thePackmaster.actions.royaltypack.PayTributeAction;
-import thePackmaster.cards.AbstractPackmasterCard;
+import thePackmaster.cards.royaltypack.AbstractRoyaltyCard;
 import thePackmaster.util.Wiz;
 
 import javax.smartcardio.Card;
