@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.unique.AttackFromDeckToHandAction;
 import com.megacrit.cardcrawl.actions.utility.ConditionalDrawAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thePackmaster.ThePackmaster;
 import thePackmaster.actions.royaltypack.DrawSpecificCardTypeAction;
 import thePackmaster.actions.royaltypack.PayTributeAction;
 import thePackmaster.cards.royaltypack.AbstractRoyaltyCard;
@@ -22,7 +23,8 @@ public class NobleStrikeTribute extends AbstractRoyaltyCard {
     public final static int TRIBUTE_GOLD_AMOUNT = 5;
 
     public NobleStrikeTribute(){
-        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF, ThePackmaster.Enums.PACKMASTER_RAINBOW,
+                "anniv5Resources/images/cards/OptionTribute.png");
         baseMagicNumber = magicNumber = 1;
     }
 

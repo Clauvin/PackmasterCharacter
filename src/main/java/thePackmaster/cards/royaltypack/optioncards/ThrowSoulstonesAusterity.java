@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.BlizzardEffect;
+import thePackmaster.ThePackmaster;
 import thePackmaster.cards.royaltypack.AbstractRoyaltyCard;
 import thePackmaster.util.Wiz;
 
@@ -22,12 +23,14 @@ public class ThrowSoulstonesAusterity extends AbstractRoyaltyCard {
     public final static int DAMAGE = 5;
 
     public ThrowSoulstonesAusterity(){
-        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
+        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.ALL_ENEMY, ThePackmaster.Enums.PACKMASTER_RAINBOW,
+                "anniv5Resources/images/cards/OptionAusterity.png");
         baseDamage = damage = DAMAGE;
     }
 
     public ThrowSoulstonesAusterity(int damageToDo){
-        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
+        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.ALL_ENEMY, ThePackmaster.Enums.PACKMASTER_RAINBOW,
+                "anniv5Resources/images/cards/OptionAusterity.png");
         baseDamage = damage = damageToDo;
     }
 

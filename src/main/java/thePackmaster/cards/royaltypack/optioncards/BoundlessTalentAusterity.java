@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thePackmaster.ThePackmaster;
 import thePackmaster.cards.royaltypack.AbstractRoyaltyCard;
 import thePackmaster.util.Wiz;
 
@@ -20,14 +21,15 @@ public class BoundlessTalentAusterity extends AbstractRoyaltyCard {
     private int maxDrawHandSize;
 
     public BoundlessTalentAusterity(){
-        //super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF,  color, final String textureString)
-        //super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF, );
+        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF, ThePackmaster.Enums.PACKMASTER_RAINBOW,
+                        "anniv5Resources/images/cards/OptionAusterity.png");
         this.maxDrawHandSize = 4;
         baseMagicNumber = magicNumber = this.maxDrawHandSize;
     }
 
     public BoundlessTalentAusterity(int maxDrawHandSize){
-        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF, ThePackmaster.Enums.PACKMASTER_RAINBOW,
+                "anniv5Resources/images/cards/OptionAusterity.png");
         this.maxDrawHandSize = maxDrawHandSize;
         baseMagicNumber = magicNumber = this.maxDrawHandSize;
     }

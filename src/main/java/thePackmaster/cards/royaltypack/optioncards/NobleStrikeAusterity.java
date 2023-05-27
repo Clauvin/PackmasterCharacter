@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.utility.ConditionalDrawAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thePackmaster.ThePackmaster;
 import thePackmaster.cards.royaltypack.AbstractRoyaltyCard;
 import thePackmaster.util.Wiz;
 
@@ -19,7 +20,8 @@ public class NobleStrikeAusterity extends AbstractRoyaltyCard {
     public final static int GOLD_GAINED = 5;
 
     public NobleStrikeAusterity(){
-        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF, ThePackmaster.Enums.PACKMASTER_RAINBOW,
+                "anniv5Resources/images/cards/OptionAusterity.png");
         baseMagicNumber = magicNumber = 1;
     }
 

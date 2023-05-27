@@ -5,6 +5,7 @@ import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thePackmaster.ThePackmaster;
 import thePackmaster.actions.royaltypack.PayTributeAction;
 import thePackmaster.cards.royaltypack.AbstractRoyaltyCard;
 import thePackmaster.util.Wiz;
@@ -19,13 +20,15 @@ public class ForcefieldTribute extends AbstractRoyaltyCard {
     private int temporaryHpGained;
 
     public ForcefieldTribute(){
-        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF, ThePackmaster.Enums.PACKMASTER_RAINBOW,
+                "anniv5Resources/images/cards/OptionTribute.png");
         temporaryHpGained = 0;
         baseMagicNumber = magicNumber = temporaryHpGained;
     }
 
     public ForcefieldTribute(int temporaryHpGained){
-        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF, ThePackmaster.Enums.PACKMASTER_RAINBOW,
+                "anniv5Resources/images/cards/OptionTribute.png");
         this.temporaryHpGained = temporaryHpGained;
         baseMagicNumber = magicNumber = this.temporaryHpGained;
     }
