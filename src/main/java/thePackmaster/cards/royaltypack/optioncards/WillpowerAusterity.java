@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
+import thePackmaster.ThePackmaster;
 import thePackmaster.cards.royaltypack.AbstractRoyaltyCard;
 import thePackmaster.util.Wiz;
 
@@ -18,7 +19,8 @@ public class WillpowerAusterity extends AbstractRoyaltyCard {
     public final static String ID = makeID("WillpowerAusterity");
 
     public WillpowerAusterity(){
-        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF, ThePackmaster.Enums.PACKMASTER_RAINBOW,
+                "anniv5Resources/images/cards/OptionAusterity.png");
     }
 
     @Override

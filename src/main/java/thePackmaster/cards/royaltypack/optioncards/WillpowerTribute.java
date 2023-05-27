@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.BufferPower;
+import thePackmaster.ThePackmaster;
 import thePackmaster.actions.royaltypack.PayTributeAction;
 import thePackmaster.cards.royaltypack.AbstractRoyaltyCard;
 import thePackmaster.util.Wiz;
@@ -20,7 +21,8 @@ public class WillpowerTribute extends AbstractRoyaltyCard {
     public final static int TRIBUTE_GOLD_AMOUNT = 10;
 
     public WillpowerTribute(){
-        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF, ThePackmaster.Enums.PACKMASTER_RAINBOW,
+                "anniv5Resources/images/cards/OptionTribute.png");
     }
 
     @Override
