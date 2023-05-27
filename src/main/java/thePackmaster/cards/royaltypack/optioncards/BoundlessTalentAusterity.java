@@ -20,7 +20,8 @@ public class BoundlessTalentAusterity extends AbstractRoyaltyCard {
     private int maxDrawHandSize;
 
     public BoundlessTalentAusterity(){
-        super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF);
+        //super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF,  color, final String textureString)
+        //super(ID, -2, CardType.STATUS, CardRarity.SPECIAL, CardTarget.SELF, );
         this.maxDrawHandSize = 4;
         baseMagicNumber = magicNumber = this.maxDrawHandSize;
     }
