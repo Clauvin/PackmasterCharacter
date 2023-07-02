@@ -6,6 +6,12 @@
       "Levender"
     ]
   },
+  "${ModID}:RoyaltyPackHat": {
+    "TEXT": [
+      "The golden symbol of a heavy duty.",
+      "Royal Crown"
+    ]
+  },
   "${ModID}:BoundlessTalentAction": {
     "TEXT": [
       "copy."
