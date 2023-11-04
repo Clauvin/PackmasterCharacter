@@ -17,8 +17,8 @@ public class NobleSlash extends AbstractRoyaltyCard {
     public final static String ID = makeID("NobleSlash");
 
     public NobleSlash(){
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = damage = 10;
+        super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        baseDamage = damage = 15;
     }
 
     @Override
@@ -34,6 +34,5 @@ public class NobleSlash extends AbstractRoyaltyCard {
         ReflectionHacks.setPrivate(drawReductionPower, DrawReductionPower.class, "justApplied", false);
         Wiz.atb(new ApplyPowerAction(abstractPlayer, abstractPlayer,
                 drawReductionPower));
-
     }
 }
