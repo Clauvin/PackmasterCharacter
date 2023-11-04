@@ -18,12 +18,12 @@ public class NobleSlash extends AbstractRoyaltyCard {
 
     public NobleSlash(){
         super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = damage = 15;
+        baseDamage = damage = 14;
     }
 
     @Override
     public void upp() {
-        upgradeDamage(5);
+        upgradeDamage(4);
     }
 
     @Override
