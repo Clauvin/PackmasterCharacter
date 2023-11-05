@@ -16,7 +16,7 @@ import static thePackmaster.SpireAnniversary5Mod.makeID;
 public class ForcefieldTribute extends AbstractRoyaltyCard {
 
     public final static String ID = makeID("ForcefieldTribute");
-    public final static int TRIBUTE_GOLD_AMOUNT = 9;
+    public final static int TRIBUTE_GOLD_AMOUNT = 8;
     private int temporaryHpGained;
 
     public ForcefieldTribute(){
