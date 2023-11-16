@@ -100,7 +100,7 @@
   },
   "${ModID}:NobleForm": {
     "NAME": "Noble Form",
-    "DESCRIPTION": "When you discard a card, draw a card. When you lose Gold, gain 5 gold.",
-    "UPGRADE_DESCRIPTION": "When you discard or play a card, draw a card. When you lose Gold or HP, gain 5 gold."
+    "DESCRIPTION": "When you discard a card, draw a card. When you lose Gold, gain 5 Gold.",
+    "UPGRADE_DESCRIPTION": "When you discard or play a card, draw a card. When you lose Gold or HP, gain 5 Gold."
   }
 }
