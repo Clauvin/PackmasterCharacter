@@ -21,11 +21,11 @@ public class GemsPack extends AbstractCardPack {
     public static boolean gridScreenForGems = false;
     public static boolean gridScreenForSockets = false;
 
-    public static final int goldCostToSocket = 20; //BE SURE TO UPDATE KEYWORDSTRINGS IF YOU CHANGE THIS
+    public static final int goldCostToSocket = 25; //BE SURE TO UPDATE KEYWORDSTRINGS IF YOU CHANGE THIS
 
 
     public GemsPack() {
-        super(ID, NAME, DESC, AUTHOR);
+        super(ID, NAME, DESC, AUTHOR, new PackSummary(1, 1, 5, 1, 4, PackSummary.Tags.Orbs));
     }
 
     @Override
