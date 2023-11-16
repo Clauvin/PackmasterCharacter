@@ -35,8 +35,8 @@ public class LoseGoldTextEffect extends AbstractGameEffect {
         this.x = AbstractDungeon.player.hb.cX;
         this.y = AbstractDungeon.player.hb.cY;
         this.destinationY = this.y + 150.0F * Settings.scale;
-        this.duration = 3.0F;
-        this.startingDuration = 3.0F;
+        this.duration = 6.0F;
+        this.startingDuration = 6.0F;
         this.reachedCenter = false;
         this.gold = startingAmount;
         totalGold = startingAmount;
