@@ -65,13 +65,15 @@ public class ThrowSoulstonesTribute extends AbstractRoyaltyCard {
         DamageAllEnemiesAction dmgAll = new DamageAllEnemiesAction(AbstractDungeon.player, damageMatrix, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE);
         addToBot(dmgAll);
         if (originalThrowSoulstonesCard != null){
-            Wiz.atb(new NewQueueCardAction(originalThrowSoulstonesCard, false));
+            AbstractCard tmp = originalThrowSoulstonesCard.makeSameInstanceOf();
+            tmp.purgeOnUse = true;
+
+            Wiz.atb(new NewQueueCardAction(tmp, false));
         }
         else {
             Logger logger = LogManager.getLogger(ID);
             logger.info("Ok, how we reached this we shouldn't be here, call Levender");
         }
-
     }
 
 }
