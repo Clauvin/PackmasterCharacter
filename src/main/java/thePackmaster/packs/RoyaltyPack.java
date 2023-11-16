@@ -13,9 +13,10 @@ public class RoyaltyPack extends AbstractCardPack {
     public static final String NAME = UI_STRINGS.TEXT[0];
     public static final String DESC = UI_STRINGS.TEXT[1];
     public static final String AUTHOR = UI_STRINGS.TEXT[2];
+    public static final String CREDITS = UI_STRINGS.TEXT[3];
 
     public RoyaltyPack() {
-        super(ID, NAME, DESC, AUTHOR);
+        super(ID, NAME, DESC, AUTHOR, CREDITS, new PackSummary(4,2,5,3,3, PackSummary.Tags.Discard));
     }
 
     @Override
