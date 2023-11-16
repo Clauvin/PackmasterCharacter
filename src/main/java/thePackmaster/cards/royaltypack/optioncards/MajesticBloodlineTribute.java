@@ -52,7 +52,10 @@ public class MajesticBloodlineTribute extends AbstractRoyaltyCard {
     public void onChoseThisOption(){
         Wiz.atb(new PayTributeAction(TRIBUTE_GOLD_AMOUNT));
         if (cardToPlayAgain != null){
-            Wiz.atb(new NewQueueCardAction(cardToPlayAgain, false));
+            AbstractCard tmp = cardToPlayAgain.makeSameInstanceOf();
+            tmp.purgeOnUse = true;
+
+            Wiz.atb(new NewQueueCardAction(tmp, false));
         }
         else {
             Logger logger = LogManager.getLogger(ID);
