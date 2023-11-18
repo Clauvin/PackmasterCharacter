@@ -5,7 +5,7 @@
       "When you discard a card, draw ",
       "a card. ",
       " cards. ",
-      "When you lose Gold, gain ",
+      "When you lose gold, gain ",
       " gold."
     ]
   },
@@ -16,7 +16,7 @@
       "When you discard or play a card, draw ",
       "a card. ",
       " cards. ",
-      "When you lose Gold or HP, gain ",
+      "When you lose gold or HP, gain ",
       " gold."
     ]
   }
