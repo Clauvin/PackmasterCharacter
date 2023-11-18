@@ -19,8 +19,7 @@ public class LoseGoldPatch {
 
     @SpirePostfixPatch
     public static void loseGold(AbstractPlayer player, int goldAmount) {
-        if (!(AbstractDungeon.getCurrRoom() instanceof com.megacrit.cardcrawl.rooms.ShopRoom) &&
-                (AbstractDungeon.getCurrRoom()).phase != AbstractRoom.RoomPhase.COMBAT)
+        if (!(AbstractDungeon.getCurrRoom() instanceof com.megacrit.cardcrawl.rooms.ShopRoom))
         {
             for (AbstractPower p : AbstractDungeon.player.powers) {
                 if (p instanceof OnLoseGold) {
