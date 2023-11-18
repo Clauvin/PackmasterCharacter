@@ -6,8 +6,8 @@
   },
   "${ModID}:NobleStrikeTribute": {
     "NAME": "Tribute",
-    "DESCRIPTION": "Tribute 5: Draw an Attack.",
-    "UPGRADE_DESCRIPTION": "Tribute 5: Draw !M! Attacks."
+    "DESCRIPTION": "${ModID}:Tribute 5: Draw an Attack.",
+    "UPGRADE_DESCRIPTION": "${ModID}:Tribute 5: Draw !M! Attacks."
   },
   "${ModID}:NobleStrikeAusterity": {
     "NAME": "Austerity",
