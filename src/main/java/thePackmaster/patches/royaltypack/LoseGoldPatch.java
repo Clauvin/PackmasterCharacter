@@ -1,4 +1,4 @@
-package thePackmaster.patches;
+package thePackmaster.patches.royaltypack;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
