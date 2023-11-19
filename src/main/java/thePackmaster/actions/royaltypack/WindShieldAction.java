@@ -48,8 +48,9 @@ public class WindShieldAction extends AbstractGameAction {
             if (AbstractDungeon.handCardSelectScreen.selectedCards.size() != 0){
                 CardGroup selected_cards = AbstractDungeon.handCardSelectScreen.selectedCards;
                 for (int i = selected_cards.size() - 1; i >= 0; i--){
-                    AbstractCard selected_card = AbstractDungeon.player.hand.findCardById(selected_cards.group.get(i).cardID);
-                    Wiz.atb(new DiscardSpecificCardAction(selected_card));
+                    AbstractCard card = selected_cards.getBottomCard();
+                    AbstractDungeon.player.hand.addToHand(card);
+                    Wiz.atb(new DiscardSpecificCardAction(card));
                     Wiz.atb(new GainBlockAction(AbstractDungeon.player, blockPerDiscard));
                 }
             }
