@@ -1,6 +1,7 @@
 package thePackmaster.actions.royaltypack;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -46,11 +47,10 @@ public class WindShieldAction extends AbstractGameAction {
     private void doAction(){
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             if (AbstractDungeon.handCardSelectScreen.selectedCards.size() != 0){
-                CardGroup selected_cards = AbstractDungeon.handCardSelectScreen.selectedCards;
-                for (int i = selected_cards.size() - 1; i >= 0; i--){
-                    AbstractCard card = selected_cards.getBottomCard();
-                    AbstractDungeon.player.hand.addToHand(card);
-                    Wiz.atb(new DiscardSpecificCardAction(card));
+                for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
+                    AbstractDungeon.player.hand.moveToDiscardPile(c);
+                    c.triggerOnManualDiscard();
+                    GameActionManager.incrementDiscard(false);
                     Wiz.atb(new GainBlockAction(AbstractDungeon.player, blockPerDiscard));
                 }
             }
