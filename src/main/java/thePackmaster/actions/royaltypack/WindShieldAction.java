@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -43,8 +45,10 @@ public class WindShieldAction extends AbstractGameAction {
     private void doAction(){
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             if (AbstractDungeon.handCardSelectScreen.selectedCards.size() != 0){
-                for (int i = AbstractDungeon.handCardSelectScreen.selectedCards.size() - 1; i >= 0; i--){
-                    Wiz.atb(new DiscardSpecificCardAction(AbstractDungeon.handCardSelectScreen.selectedCards.getBottomCard()));
+                CardGroup selected_cards = AbstractDungeon.handCardSelectScreen.selectedCards;
+                for (int i = selected_cards.size() - 1; i >= 0; i--){
+                    AbstractCard selected_card = AbstractDungeon.player.hand.findCardById(selected_cards.group.get(i).cardID);
+                    Wiz.atb(new DiscardSpecificCardAction(selected_card));
                     Wiz.atb(new GainBlockAction(AbstractDungeon.player, blockPerDiscard));
                 }
             }
