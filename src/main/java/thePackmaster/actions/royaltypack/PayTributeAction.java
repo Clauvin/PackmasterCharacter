@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.GainGoldTextEffect;
@@ -28,12 +29,14 @@ public class PayTributeAction extends AbstractGameAction {
         int currentPlayerGold = AbstractDungeon.player.gold;
         if (currentPlayerGold >= amountToPay){
             AbstractDungeon.effectList.add(new LoseGoldTextEffect(-amountToPay));
+            CardCrawlGame.sound.play("GOLD_GAIN", 0.3F);
             AbstractDungeon.player.loseGold(amountToPay);
         }
         else {
             int trueGoldAmountToLose = currentPlayerGold;
             AbstractDungeon.effectList.add(new LoseGoldTextEffect(-trueGoldAmountToLose));
             AbstractDungeon.player.loseGold(trueGoldAmountToLose);
+            CardCrawlGame.sound.play("GOLD_GAIN", 0.3F);
             int HPToLose = amountToPay - trueGoldAmountToLose;
             if (HPToLose > 0){
                 Wiz.atb(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, HPToLose));
